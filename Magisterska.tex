@@ -1,0 +1,109 @@
+\documentclass[xodstep]{wnspt}
+
+\author   {XYZ}
+\nralbumu {77071} 
+\kierunek {Informatyka}
+\specjalnosc {Tworzenie gier komputerowych}
+
+\date     {2024}
+\miejsce {Cz\k{e}stochowa}
+%\instytut {Zak\l{}adzie Informatyki Stosowanej}
+\opiekun  {dr hab. Andrzej Zbrzezny}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{listingsutf8}
+\usepackage{beramono}
+\usepackage[section]{placeins}
+\usepackage{csquotes}
+\usepackage{carlito} % Dodanie czcionki Carlito
+\usepackage[%backend=biber,refsegment=section,defernumbers=true,]{biblatex}
+
+\lstset{ %
+language=c++,                  % choose the language of the code
+basicstyle=\ttfamily,           % the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it's 1 each line will be
+numbersep=5pt,                  % how far the line-numbers are from the code
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,                   % adds a frame around the code
+tabsize=4,                      % sets default tabsize to 2 spaces
+captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+\newcommand{\R}{mathbb{R}}
+
+\renewcommand{\lstlistlistingname}{Spis listingów}
+\renewcommand{\lstlistingname}{Listing}
+
+\newtheorem{lemat}{Lemat}
+\newtheorem{twierdzenie}{Twierdzenie}
+
+\title{\begin{LARGE}Optymalizacja interfejsów użytkownika w grach wirtualnej rzeczywistości: Perspektywa programisty i projektanta UX/UI
+\\{~}
+Optimizing user interfaces in virtual reality games: A developer and UX/UI designer's perspective
+\end{LARGE}}
+
+\frenchspacing
+\begin{document}
+\begin{abstract}
+Celem pracy dyplomowej było opisanie i opracowanie projektu interfejsu użytkownika
+Dokonano analizy konkurencji, zaprojektowano 
+Przebudowano gotowe systemy
+Wdrożony system został przetestowany potwierdzając poprawne działanie.
+
+
+Opisano również dalsze możliwości rozwoju gry.
+\end{abstract}
+
+\keywords{Izometria,Język Skryptowy, interfejs graficzny, aplikacja internetowa}
+\maketitle
+
+\onehalfspacing
+
+\introduction
+
+W dzisiejszych czasach gry komputerowe stały się powszechną formą spędzania wolnego czasu. Nic więc dziwnego, że firmy prześcigają się w rozwijaniu technologii i zapewnianiu konsumentom coraz to lepszych wrażeń podczas grania. Szczególnie dla odbiorców, oprócz szczegółowej grafiki oraz złożonych mechanik, ważne są także kosmetyczne elementy, które pozwalają bardziej zagłębić się w przedstawiony świat.
+
+
+	
+	Układ tej pracy jest następujący. W rozdziale pierwszym opisane zostały narzędzia i programy wykorzystane podczas tworzenia pracy. Pokazano również grę, która stała się inspiracją do stworzenia systemu zmiany pory roku oraz przeprowadzono analizę konkurencyjnych gier istniejących już na rynku. W rozdziale drugim opisane zostały często używane w grach style graficzne. Następnie przeanalizowano je pod kątem ich rozmiaru oraz innych parametrów, by następnie dokonać wyboru stylistyki pasującej do rozgrywki pod względem graficznym i implementacyjnym. 
+W rozdziale trzecim skupiono się na
+
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+
+\summary
+Założony cel tej pracy, aby 
+
+
+\bibliographystyle{plain}
+\printbibliography[type=book,title={Books only}]
+
+% spis rysunków (jeżeli jest potrzebny):
+\listoffigures
+
+% spis listingów (jeżeli jest potrzebny):
+\lstlistoflistings
+
+\end{document}
