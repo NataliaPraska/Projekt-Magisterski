@@ -14,6 +14,7 @@
 % Zmiany na potrzeby WMP AJD by (c) A. Zbrzezny, 2012
 % Zmiany na potrzeby WMP UJD by (c) A. Zbrzezny, 2019
 % Zmiany na potrzeby WNSPT UJD by (c) A. Zbrzezny, 2021
+% Zmiany na potrzeby WNSPT UJD by (c) A. Zbrzezny, 2023
 %
 % Copyright (c) T. Przechlewski (rudolf.von.ems@gmail.com), 2002--2004, 2005, 2008, 2009, 2011
 %
@@ -61,10 +62,10 @@
 \ProvidesClass{wnspt}[2009/06/19 \ThisClassVersionId, Praca magisterska/licencjacka]
 
 \def\@baseclass{report}
-\def\@rodzajpracy{in\.zynierska}
+\def\@rodzajpracy{magisterska}
 \def\@BInterlinia{\relax}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\@baseclass}}
-\PassOptionsToClass{a4paper,twoside,openany,11pt}{\@baseclass}
+\PassOptionsToClass{a4paper,twoside,openany,12pt}{\@baseclass}
 % %% >> zmiana 2011/1/28 >>
 \newif\if@wnsptauthoryear  \@wnsptauthoryearfalse
 \newif\if@wnsptWithTgPagella \@wnsptWithTgPagellafalse
@@ -109,8 +110,9 @@
 \evensidemargin-1in
 \advance\evensidemargin 25mm
 \topmargin -1in
-\advance\topmargin 25mm
+\advance\topmargin 15mm %25mm
 \setlength\textheight{48\baselineskip}
+\setlength{\footskip}{20pt}
 \addtolength\textheight{\topskip}
 \marginparwidth15mm
 %
@@ -165,7 +167,7 @@
 
  % <<
 \def\UniversityName#1{\def\Univ@Name{#1}}
-\def\Univ@Name{UNIWERSYTET HUMANISTYCZNO-PRZYRODNICZY\\im.~JANA~D{\L}UGOSZA~w~CZ\k{E}STOCHOWIE}%
+\def\Univ@Name{UNIWERSYTET JANA~D{\L}UGOSZA~w~CZ\k{E}STOCHOWIE}%
  % <<
 \renewcommand\maketitle{%
   \begin{titlepage}%
@@ -183,31 +185,31 @@
       \includegraphics[scale=0.8]{logo_ujd.png}
     \end{center}%
     \begin{center}%
-      {\LARGE \textbf{Wydzia{\l} Nauk Ścis{\l}ych, Przyrodniczych i~Technicznych}\par}
+      {\Large \textbf{Wydzia{\l} Nauk Ścis{\l}ych, Przyrodniczych i~Technicznych}\par}
       \par 
     \end{center}%
     \vspace{10mm}
-    \begin{flushleft}
-      {\large \textsf{Kierunek: \@kierunek}}\\[0pt]
-      {\large \textsf{Specjalno{\'s}{\'c}: \@specjalnosc}\par}
+    \begin{flushleft}%
+      {\Large \textsf{Kierunek: \@kierunek}}\\[0pt]
+      {\Large \textsf{Specjalno{\'s}{\'c}: \@specjalnosc}\par}
     \end{flushleft}%
     \vspace{10mm}
     \begin{center}%
-      {\huge \@author\par}
+      {\Large \@author\par}
     \end{center}%
      \vspace{8mm plus 1mm minus 2mm}
     \begin{center}%
-      {\huge\textbf{\@title}\par}
+      {\Large\textbf{\@title}\par}
       \vspace{1.8cm plus 1.5fill}
       \begin{flushright}\large
         \begin{tabular}{l}
-          \textsf{\Large Praca \@rodzajpracy{} przygotowana}\\[1pt]
-          \textsf{\Large pod kierunkiem}\\[1pt]
-          \textsf{\Large \@opiekun}
+          \textsf{\large Praca \@rodzajpracy{} przygotowana}\\[1pt]
+          \textsf{\large pod kierunkiem}\\[1pt]
+          \textsf{\large \@opiekun}
         \end{tabular}
       \end{flushright}
       \vspace{15mm plus .1fill}
-      \textsf{\Large \@miejsce\space \@date}\par
+      \textsf{\large \@miejsce\space \@date}\par
     \end{center}
     \@thanks
   \end{titlepage}%
