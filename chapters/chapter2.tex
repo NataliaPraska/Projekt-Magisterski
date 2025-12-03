@@ -1,8 +1,94 @@
-\chapter{Tło technologiczne i wykorzystywane narzędzia}
+\chapter{Podstawy teoretyczne i Tło technologiczne}
+
+\section{Podstawy teoretyczne} 
+
+
+\subsection{Definicje, pojęcia i klasyfikacje VR}
+
+Charakterystyka środowiska rzeczywistości wirtualnej (VR)
+Technologia rzeczywistości wirtualnej polega na tworzeniu w pełni sztucznego otoczenia, które wywołuje poczucie przebywania w zupełnie innym miejscu lub świecie. Dzięki specjalistycznym urządzeniom, takim jak gogle czy kontrolery ruchu, możliwe staje się obserwowanie i oddziaływanie na generowane wirtualnie obiekty w czasie rzeczywistym. Rozwiązania z zakresu VR wykorzystują zaawansowane techniki renderowania grafiki, precyzyjnie śledzą ruch głowy i dłoni, a także uwzględniają dźwięk przestrzenny, co pozwala na osiągnięcie wysokiego stopnia imersji. Technologia ta znajduje zastosowanie nie tylko w obszarze gier i rozrywki, lecz również w szkoleniach branżowych, symulacjach medycznych \ref{vr_example} i architektonicznych oraz w przemyśle, gdzie służy do prototypowania i prezentacji projektów. Wirtualna rzeczywistość sprzyja ograniczaniu kosztów wdrożeń oraz podnoszeniu efektywności procesów nauki i projektowania, ponieważ umożliwia wielokrotne testowanie różnych scenariuszy w ściśle kontrolowanym środowisku.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/vr_example.jpg}
+    \caption{Symulator medyczny służący do szkolenia lekarzy}
+    \label{vr_example}
+\end{figure}\textbf{}
+
+
+\subsection{Ergonomia, percepcja i ograniczenia użytkownika}
+
+W grach komputerowych czy aplikacjach rzadko zdarza się aby użytkownik odczuwał dyskomfort fizyczny, jedynym czynnikiem mogącym zakłócić poczucie komfortu jest natknięcie się na elementy wywołujące fobie, takie jak arachnofobia czy klaustrofobia. VR oferuje o wiele większą immersję niż gry na komputer i pozwala użytkownikowi na pełne zanurzenie się w rozgrywkę, ale tworzenie treści do tego środowiska wymaga zachowania większej ostrożności, aby uniknąć efektów ubocznych. Jednym z nich jest choroba symulatorowa (VR sickness).
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/VRSICK.png}
+    \caption{Przykładowy wygląd edytora Unity}
+    \label{unity_engine_example}
+\end{figure}
+
+Choroba ta jest bardzo powszechna wśród osób korzystających z wirtualnej rzeczywistości. Objawia się najczęściej mdłościami, zawrotami głowy czy ogólna dezorientacją. \textbf{}{Komfort użytkownika i jego adaptacja fizyczna} jest więc kluczowymi aspektami projektowania interfejsów użytkownika. (3D user Interfaces Theory and Practice)
+
+Interakcje z produktami na komputery i telefony opierają się głownie na płaskich bodźcach wizualnych i dźwiękowych. Ogranicza to poziom zaangażowania odbiorcy i wpływa na mniej intensywne doświadczenia. Natomiast wirtualne środowisko może angażować nie tylko słuch i wzrok ale również dotyk poprzez kontrolery z haptyczna czy wibracje. Wirtualna rzeczywistość angażuje różne \textbf{zmysły}, aby maksymalnie zwiększyć zanurzenie użytkownika w cyfrowym świecie i zapewnić mu jak najlepsze doznania. Podane różnice dowodzą, że projektowanie interfejsu dla VR wymaga zupełnie innego podejścia niż w przypadku tradycyjnych gier i aplikacji. 
+
+
+\subsection{Modele interakcji w VR}
+\subsection{Typologie interfejsów VR (2D, 3D, diegetyczne, systemowe)}
+
+Projektowanie interfejsu do VR może odbywać się na kilka różnych sposobów różniących się od siebie sposobem integracji z wirtualnym środowiskiem i tym jak prezentowane są istotne informacje. Aby odpowiednio przygotować się do projektowania, należy zapoznać się z najczęściej stosowanymi rozwiązaniami w istniejących już na rynku produktach. Należy zrozumieć, co twórcy gier i symulatorów uznali za ważniejsze, pełną immersję czy raczej stawiali na tradycyjne menu i lewitujące w przestrzeni wirtualnej panele. W pierwszej kolejności warto jednak poznać kilka podstawowych rodzajów interfejsów i czym się charakteryzują. Pozwoli to na lepsze zrozumienie jak i kiedy są one wykorzystywane. Na potrzeby analizy zastosowano podział interfejsów na cztery najczęściej stosowane rodzaje. Interfejs jako część świata gry, Klasyczny panel menu (Non-diegetic UI), Interfejs panelowy w środowisku VR (Spatial UI) oraz HUD (Head-Up Display.
+Pierwszy rodzaj polega na wpleceniu interfejsu w elementy już istniejące w świecie wirtualnym, użytkownik żeby go zobaczyć musi fizycznie skierować głowę na dany element. Drugi z kolei wykorzystuje tradycyjny panel menu, ktory możemy spotkać na stronach internetowych czy w grach na komputer. Elementy interfejsu nie są częścią otoczenia a sam panel jest nakładką na widok użytkownika. Kolejne podejście to interfejs panelowy ale umieszczony w środowisku wirtualnym. Typ ten charakteryzuje się unoszącym się w powietrzu menu, które może być sterowane za pomocą kontrolera lub ruchami rąk. Ostatni typ to HUD, rodzaj stosowany często w tradycyjnych grach. Najważniejsze informacje są "przyklejone" do widoku gracza, pozostając cały czas w jego polu widzenia niezależnie od miejsca w którym znajduje się użytkownik w wirtualnym otoczeniu.
+
+\subsection{Przegląd interfejsów użytkownika w środowiskach VR(Najczęściej spotykane UI w VR}
+\subsection{Opis typowych sposobów interakcji w VR}
+typy interakcji z VR
+Siedzący (Seated VR)najczęściej stosowany w symulatorach lotniczych i wyścigowych, które wymagają precyzyjnego sterowania; stojący zwany rownież stacjonarnym
+Stacjonarny 
+Swobodny ruch (Room-scale VR)
+Tryby renderowania i wyświetlania VR
+Tryby śledzenia ruchu użytkownika
+Tryby użytkowania w zależności od platformy
+Tryby użytkowania VR według zastosowania
+Czym jest Interfejs uzytkownika w VR
+Czym są interakcje i jakie wyroznia sie metody interakcji w vr
+
+\subsection{Klasyczne zasady UX}
+
+\subsubsection{Hierarchia wizualna}
+\subsubsection{Zasady Gestalt}
+\subsubsection{Minimalizm i redukcja obciążenia poznawczego}
+\subsubsection{Spójność i przewidywalność}
+\subsubsection{Affordance i feedback}
+\subsubsection{Heurystyki Nielsena}
+\subsubsection{Róznice w projektowaniu interfejsu VR}
+Chociaż większość podstawowych zasad UX designu jest uznawana jako uniwersalana to projektowanie interfejsu użytkownika w oparciu o nie wymaga od projektanta innego podejścia. Wynika to z odmienności systemu VR od innych technologii, takich jak aplikacje mobilne, aplikacje desktopowe czy strony internetowe, gdzie wszystkie interakcje z systemem odbywają się za pomocą myszki, klawiatury, ekranów dotykowych ewentualnie czytników ekranów. Tworzenie interfejsów użytkownika w środowisku wirtualnej rzeczywistości wiąże się z wieloma trudnościami, które nie występują w tradycyjnych aplikacjach. W projekcie konieczne będzie dostosowanie zasad tak, aby umożliwić użytkownikom komfortową, intuicyjną oraz płynną interakcję z produktem. Przy projektowaniu należy wziąć pod uwagę takie aspekty jak ograniczenia technologiczne i sensoryczne jak np. pole widzenia czy ograniczenia motoryczne użytkowników. 
+
+Pierwszą fundamentalną różnicą między tradycyjnym wykorzystaniem zasad UX designu jest \textbf{Nawigacja}. W przypadku stron internetowych i aplikacji przemieszczanie się po produkcie odbywa się za pomocą klikania ikon, przewijania, ruchów myszką czy naciskania odpowiednich przycisków na klawiaturze. W wirtualnej rzeczywistości nawigowanie polega w głównej mierze na ruchach użytkownika szczególnie w przypadku bardziej zaawansowanych urządzeń takich jak  Pico 4 Ultra Enterprise, które nie wymagają dodatkowych urządzeń a korzystanie z nich odbywa się bezprzewodowo.(https://vr-expert.com/pl/samodzielne-vr/). Przemieszczanie po systemie odbywa się za pomocą śledzenia ruchow głową i ciała za pomocą kontrolerów ruchów. Często stosowane są również abstrakcyjne metody przemieszczania się, jak np. teleportacja do innego miejsca oddalonego w przestrzeni, co umożliwia eksplorowanie większych środowisk VR (Jennifer Whyte Dragana Nikolić - Virtual Reality and the Built Environment-Routledge (2018). Sam interfejs jest też inaczej umieszczony w przestrzeni. Tradycyjnie osadzone są w przestrzeni ekranu. W wirtualnej rzeczywistości interfejsy są umieszczone w przestrzeni  świata. Elementy mogą lewitować przed użytkownikiem lub częscią być częścią otoczenia. (Jonathan Linowes - Unity Virtual Reality Projects - Second Edition)
+Następna równie ważna różnica to \textbf{Interakcja w przestrzeni 3D}. W tradycyjnych interfejsach  użytkownik wchodzi w interakcje z płaskimi, dwuwymiarowymi elementami na ekranie. W VR interakcje odbywają się w przestrzeni trójwymiarowej a użytkownik może dowolnie manipulować  obiektami tak jakby były on prawdziwe. Umożliwia chwytanie obracanie i przesuwanie element za pomocą rąk oraz interakcje które wymagają pełnego zaangażowania ciała użytkownika jak np. schylanie czy kucanie co wpływa pozytywnie na immersje i realizm doświadczenia.
+Pozwala również na odejście od zgodności z rzeczywistością(nie wiem czy  to dobry synonim dla realizmu) i umożliwia działania niemożliwe w prawdziwym świecie jak przemieszczanie przedmiotów oddalonych w dużej odległości czy teleportacja. (Virtual, Augmented and Mixed Reality)
+\textbf{Projektowanie interakcji} w wirtualnej rzeczywistości wymaga naśladowania w jaki sposob użytkownicy wchodzą w interakcje z przedmiotami i otoczeniem w prawdziwym świecie. Gesty i ruchy powinny być realistycznie odwzorowane a odpowiedz systemu natychmiastowa. Tradycyjne interakcje są bardziej pośrednie, gdy użytkownik chce wykonać jakieś działanie musi poruszyć myszką aby na ekranie kliknąć w pożądaną ikonę. W VR możliwe jest fizyczne "podniesienie" przedmiotu lub otwarcie drzwi.(Multimedia and Virtual Reality - Alistair Sutcliffe)  
+
+
+\subsubsection{Adaptacja klasycznych zasad UX do środowiska VR}
+\textbf{Czego Unikać}
+
+Przeładowania informacjami
+W VR mniej znaczy więcej, nadmierna liczba elementów w interfejsie może przytłoczyć użytkownika nadmiarem informacji i zaburzać immersję. Projektowanie do wirtualnego środowiska powinno skupiać się na minimalizmie i ograniczać do najważniejszych funkcji mniej istotne pomijając lub ukrywając. Redukcja zbędnych informacji i skupienie się na najistotniejszych funkcjonalnościach pomaga utrzymać koncentracje uzytkownika i ułatwia szybkie podejmowanie decyzji.
+
+Nagłe zmiany perspektywy i ruchu kamery
+Gwałtowne zmiany widoku mogą wywoływać dezorientacje, zawroty głowy a nawet mdłości. Poruszanie kamerą powinno odbywać się płynnie bez żadnych zakłóceń  naśladując naturalne ruchy głową użytkownika. Warto również uwzględnić stopniowe przejścia i animacje, aby zminimalizować negatywne skutki uboczne korzystania z VR. Stabilizacja i przewidywalne ruchy pomagają utrzymać komfort przez dłuższy czas. 
+
+Brak standaryzacji interfejsów
+Mimo dużej swobody w projektowaniu VR, brak spójnych i powtarzalnych zasad może frustrować użytkownikow. Należy stosować ujednolicone schematy interakcji tam gdzie to możliwe. Spojność ułatwia adaptacje do nowego środowiska, skraca to czas nauki obsługi sytemu oraz poprawia doświadczenia użytkownika. %
+
+\subsection{Metody UX stosowane w projekcie}
+
+
+\section{Tło technologiczne VR} 
+
 Kluczowym etapem projektowania tej pracy był wybór odpowiednich narzędzi umożliwiających prototypownie, implementację oraz testowanie interfejsu w środowisku VR. Wybór używanej technologii jest kluczowy, aby zapewnić wysoką jakość doświadczeń użytkownika oraz zachować efektywność samego procesu projektowania.
 
 
-\section{Silniki gier i środowiska VR (Unity, Unreal, Godot)}
+\subsection{Silniki gier i środowiska VR (Unity, Unreal, Godot)}
 
 \textit{Unity} to jeden z najpopularniejszych wieloplatformowych silników do tworzenia gier wideo oraz interaktywnych aplikacji. Umożliwia zaawansowaną obsługę grafiki i fizyki, a w samym edytorze udostępniono rozbudowany zestaw narzędzi do projektowania scen, animacji i efektów graficznych \ref{unity_engine_example}. Proces programowania odbywa się przy użyciu języka \textit{C\#}.
 
@@ -20,14 +106,13 @@ Regularne aktualizacje silnika rozszerzają jego funkcjonalność i dodają nowe
 Społeczność skupiona wokół tego silnika udostępnia liczne materiały edukacyjne w postaci kursów i filmów, co znacząco obniża poziom wejścia, przyspiesza naukę oraz ułatwia rozwiązywanie ewentualnych problemów technicznych. Dokumentacja silnika jest regularnie rozwijana, a oficjalny sklep \textit{Asset Store} zapewnia dostęp do bardzo dużej ilości bezpłatnych oraz płatnych pakietów, obejmujących zasoby takie jak modele, tekstury i dźwięki oraz dodatkowe użyteczne narzędzia wraz z całymi gotowymi systemami ułatwiającymi stworzenie projektu i pozwalającymi ograniczyć koszty produkcji.
 
 
-\section{Biblioteki i frameworki VR (XR Toolkit, OpenXR, SteamVR)}
+\subsection{Biblioteki i frameworki VR (XR Toolkit, OpenXR, SteamVR)}
 
-\section{Narzędzia do projektowania interfejsów (Figma, Blender)}
+\subsection{Narzędzia do projektowania interfejsów (Figma, Blender)}
 
 Figma to podstawowe narzędzie służące do projektowania interfejsów użytkownika, jednocześnie umożliwia tworzenie interaktywnych klikalnych prototypów aplikacji. Jest to aktualnie jedno z najbardziej popularnych i bezpłatnych narzędzi w branży UX/UI. W projekcie Figma zostanie wykorzystana do stworzenia wstępnych projektów i prototypów interfejsów, a następnie do przetestowania rożnych układów elementów interfejsu. 
 
-%(tu będzie dokumentacja figmy)
-\section{Narzędzia do analizy UX/UI (Google Forms, UEQ, SUS)}
+\subsection{Narzędzia do analizy UX/UI (Google Forms, UEQ, SUS)}
 
 Gogle VR to urządzenia, które całkowicie zasłaniają pole widzenia i wyświetlają przez użytkownikiem dwa identyczne, ale nieco przesunięte od siebie obrazy, które nałożone na siebie przez mózg dają wrażenie głębi. Wewnątrz gogli umieszczone są specjalne czujniki takie jak żyroskop, kamery i inne śledzące położenie i ruch głowy w przestrzeni. Dzięki temu użytkownik obracając głową faktycznie rozgląda się w przestrzeni wirtualnej obracając kamerą gracza.
 
@@ -36,3 +121,4 @@ Oprócz gogli istotne są również specjalne kontrolery zakładane na dłonie. 
 Oprócz tego istnieje wiele różnych dodatków rozszerzających możliwości wirtualnej rzeczywistości, jak specjalne kombinezony monitorujących ruch oraz umożliwiających odczuwanie na skórze poprzez elektrostymulację nerwów i mięśni lub kapsuły, w których użytkownik ma możliwość skakania oraz poruszania się w dowolny sposób bez ryzyka, że uszkodzi coś w pokoju.
 
 2.9. Sprzęt i konfiguracja testowa
+

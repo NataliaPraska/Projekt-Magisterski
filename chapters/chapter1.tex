@@ -1,85 +1,11 @@
 \chapter{Wprowadzenie do tematyki pracy}
 
 
-\section{Interfejs użytkownika w kontekście gier komputerowych}
 
+\section{Kontekst rozwoju technologii VR}
+\section{Znaczenie interfejsu użytkownika w VR}
+\section{Rola UX w projektowaniu interfejsów VR}
+\section{Wyzwania projektowania UI w VR}
+\section{Luki badawcze i motywacja podjęcia tematu}
+\section{Złożoność procesu projektowego i pełnione role}
 
-\section{Róznice w projektowaniu interfejsu VR}
-Chociaż większość podstawowych zasad UX designu jest uznawana jako uniwersalana to projektowanie interfejsu użytkownika w oparciu o nie wymaga od projektanta innego podejścia. Wynika to z odmienności systemu VR od innych technologii, takich jak aplikacje mobilne, aplikacje desktopowe czy strony internetowe, gdzie wszystkie interakcje z systemem odbywają się za pomocą myszki, klawiatury, ekranów dotykowych ewentualnie czytników ekranów. Tworzenie interfejsów użytkownika w środowisku wirtualnej rzeczywistości wiąże się z wieloma trudnościami, które nie występują w tradycyjnych aplikacjach. W projekcie konieczne będzie dostosowanie zasad tak, aby umożliwić użytkownikom komfortową, intuicyjną oraz płynną interakcję z produktem. Przy projektowaniu należy wziąć pod uwagę takie aspekty jak ograniczenia technologiczne i sensoryczne jak np. pole widzenia czy ograniczenia motoryczne użytkowników. 
-
-Pierwszą fundamentalną różnicą między tradycyjnym wykorzystaniem zasad UX designu jest \textbf{Nawigacja}. W przypadku stron internetowych i aplikacji przemieszczanie się po produkcie odbywa się za pomocą klikania ikon, przewijania, ruchów myszką czy naciskania odpowiednich przycisków na klawiaturze. W wirtualnej rzeczywistości nawigowanie polega w głównej mierze na ruchach użytkownika szczególnie w przypadku bardziej zaawansowanych urządzeń takich jak  Pico 4 Ultra Enterprise, które nie wymagają dodatkowych urządzeń a korzystanie z nich odbywa się bezprzewodowo.(https://vr-expert.com/pl/samodzielne-vr/). Przemieszczanie po systemie odbywa się za pomocą śledzenia ruchow głową i ciała za pomocą kontrolerów ruchów. Często stosowane są również abstrakcyjne metody przemieszczania się, jak np. teleportacja do innego miejsca oddalonego w przestrzeni, co umożliwia eksplorowanie większych środowisk VR (Jennifer Whyte Dragana Nikolić - Virtual Reality and the Built Environment-Routledge (2018). Sam interfejs jest też inaczej umieszczony w przestrzeni. Tradycyjnie osadzone są w przestrzeni ekranu. W wirtualnej rzeczywistości interfejsy są umieszczone w przestrzeni  świata. Elementy mogą lewitować przed użytkownikiem lub częscią być częścią otoczenia. (Jonathan Linowes - Unity Virtual Reality Projects - Second Edition)
-Następna równie ważna różnica to \textbf{Interakcja w przestrzeni 3D}. W tradycyjnych interfejsach  użytkownik wchodzi w interakcje z płaskimi, dwuwymiarowymi elementami na ekranie. W VR interakcje odbywają się w przestrzeni trójwymiarowej a użytkownik może dowolnie manipulować  obiektami tak jakby były on prawdziwe. Umożliwia chwytanie obracanie i przesuwanie element za pomocą rąk oraz interakcje które wymagają pełnego zaangażowania ciała użytkownika jak np. schylanie czy kucanie co wpływa pozytywnie na immersje i realizm doświadczenia.
-Pozwala również na odejście od zgodności z rzeczywistością(nie wiem czy  to dobry synonim dla realizmu) i umożliwia działania niemożliwe w prawdziwym świecie jak przemieszczanie przedmiotów oddalonych w dużej odległości czy teleportacja. (Virtual, Augmented and Mixed Reality)
-\textbf{Projektowanie interakcji} w wirtualnej rzeczywistości wymaga naśladowania w jaki sposob użytkownicy wchodzą w interakcje z przedmiotami i otoczeniem w prawdziwym świecie. Gesty i ruchy powinny być realistycznie odwzorowane a odpowiedz systemu natychmiastowa. Tradycyjne interakcje są bardziej pośrednie, gdy użytkownik chce wykonać jakieś działanie musi poruszyć myszką aby na ekranie kliknąć w pożądaną ikonę. W VR możliwe jest fizyczne "podniesienie" przedmiotu lub otwarcie drzwi.(Multimedia and Virtual Reality - Alistair Sutcliffe)    
-W grach komputerowych czy aplikacjach rzadko zdarza się aby użytkownik odczuwał dyskomfort fizyczny, jedynym czynnikiem mogącym zakłócić poczucie komfortu jest natknięcie się na elementy wywołujące fobie, takie jak arachnofobia czy klaustrofobia. VR oferuje o wiele większą immersję niż gry na komputer i pozwala użytkownikowi na pełne zanurzenie się w rozgrywkę, ale tworzenie treści do tego środowiska wymaga zachowania większej ostrożności, aby uniknąć efektów ubocznych. Jednym z nich jest choroba symulatorowa (VR sickness).
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/VRSICK.png}
-    \caption{Przykładowy wygląd edytora Unity}
-    \label{unity_engine_example}
-\end{figure}
-
-Choroba ta jest bardzo powszechna wśród osób korzystających z wirtualnej rzeczywistości. Objawia się najczęściej mdłościami, zawrotami głowy czy ogólna dezorientacją. \textbf{}{Komfort użytkownika i jego adaptacja fizyczna} jest więc kluczowymi aspektami projektowania interfejsów użytkownika. (3D user Interfaces Theory and Practice)
-
-Interakcje z produktami na komputery i telefony opierają się głownie na płaskich bodźcach wizualnych i dźwiękowych. Ogranicza to poziom zaangażowania odbiorcy i wpływa na mniej intensywne doświadczenia. Natomiast wirtualne środowisko może angażować nie tylko słuch i wzrok ale również dotyk poprzez kontrolery z haptyczna czy wibracje. Wirtualna rzeczywistość angażuje różne \textbf{zmysły}, aby maksymalnie zwiększyć zanurzenie użytkownika w cyfrowym świecie i zapewnić mu jak najlepsze doznania. Podane różnice dowodzą, że projektowanie interfejsu dla VR wymaga zupełnie innego podejścia niż w przypadku tradycyjnych gier i aplikacji. 
-
-
-\section{Zastosowanie zasad UX do projektowania interfejsow  użytkownika w VR}
-
-\textbf{Czego Unikać}
-
-Przeładowania informacjami
-W VR mniej znaczy więcej, nadmierna liczba elementów w interfejsie może przytłoczyć użytkownika nadmiarem informacji i zaburzać immersję. Projektowanie do wirtualnego środowiska powinno skupiać się na minimalizmie i ograniczać do najważniejszych funkcji mniej istotne pomijając lub ukrywając. Redukcja zbędnych informacji i skupienie się na najistotniejszych funkcjonalnościach pomaga utrzymać koncentracje uzytkownika i ułatwia szybkie podejmowanie decyzji.
-
-Nagłe zmiany perspektywy i ruchu kamery
-Gwałtowne zmiany widoku mogą wywoływać dezorientacje, zawroty głowy a nawet mdłości. Poruszanie kamerą powinno odbywać się płynnie bez żadnych zakłóceń  naśladując naturalne ruchy głową użytkownika. Warto również uwzględnić stopniowe przejścia i animacje, aby zminimalizować negatywne skutki uboczne korzystania z VR. Stabilizacja i przewidywalne ruchy pomagają utrzymać komfort przez dłuższy czas. 
-
-Brak standaryzacji interfejsów
-Mimo dużej swobody w projektowaniu VR, brak spójnych i powtarzalnych zasad może frustrować użytkownikow. Należy stosować ujednolicone schematy interakcji tam gdzie to możliwe. Spojność ułatwia adaptacje do nowego środowiska, skraca to czas nauki obsługi sytemu oraz poprawia doświadczenia użytkownika. %
-
-
-
-\section{Charakterystyka środowiska rzeczywistości wirtualnej (VR)}
-Technologia rzeczywistości wirtualnej polega na tworzeniu w pełni sztucznego otoczenia, które wywołuje poczucie przebywania w zupełnie innym miejscu lub świecie. Dzięki specjalistycznym urządzeniom, takim jak gogle czy kontrolery ruchu, możliwe staje się obserwowanie i oddziaływanie na generowane wirtualnie obiekty w czasie rzeczywistym. Rozwiązania z zakresu VR wykorzystują zaawansowane techniki renderowania grafiki, precyzyjnie śledzą ruch głowy i dłoni, a także uwzględniają dźwięk przestrzenny, co pozwala na osiągnięcie wysokiego stopnia imersji. Technologia ta znajduje zastosowanie nie tylko w obszarze gier i rozrywki, lecz również w szkoleniach branżowych, symulacjach medycznych \ref{vr_example} i architektonicznych oraz w przemyśle, gdzie służy do prototypowania i prezentacji projektów. Wirtualna rzeczywistość sprzyja ograniczaniu kosztów wdrożeń oraz podnoszeniu efektywności procesów nauki i projektowania, ponieważ umożliwia wielokrotne testowanie różnych scenariuszy w ściśle kontrolowanym środowisku.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/vr_example.jpg}
-    \caption{Symulator medyczny służący do szkolenia lekarzy}
-    \label{vr_example}
-\end{figure}\textbf{}
-
-
-\subsection{Przegląd interfejsów użytkownika w środowiskach VR}
-\subsection{Opis typowych sposobów interakcji w VR}
-Tryby interakcji z VR
-Siedzący (Seated VR)najczęściej stosowany w symulatorach lotniczych i wyścigowych, które wymagają precyzyjnego sterowania; stojący zwany rownież stacjonarnym
-Stacjonarny 
-Swobodny ruch (Room-scale VR)
-Tryby renderowania i wyświetlania VR
-Tryby śledzenia ruchu użytkownika
-Tryby użytkowania w zależności od platformy
-Tryby użytkowania VR według zastosowania
-Czym jest Interfejs uzytkownika w VR
-Czym są interakcje i jakie wyroznia sie metody interakcji w vr
-
-
- \section{Projektowanie interfejsów użytkownika w środowisku VR}
- 
- %W sytuacji, gdy użytkownik napotyka trudności w interakcji z przedmiotem, takim jak drzwi, i nie wie, jak wykonać określoną czynność (np. otworzyć drzwi), problemem nie jest sam użytkownik, lecz projekt produktu(Norman, 2013).
-
-\section{Wytyczne i modele projektowania UI w VR}
-
-
-
-
-
-
-
-
-
-
-
-
-%\section{Ogólne zasady projektowania interfejsów użytkownika}
