@@ -4,9 +4,12 @@
 
 
 \subsection{Definicje, pojęcia i klasyfikacje VR}
+Aby uzasadnić potrzebe projektowania interfejsów i interakcji w grach VR w odmienny sposób niż w przypadku gier 2D czy 3D, należy najpierw zrozumieć czym jest tak naprawde VR. 
+W niniejszej pracy przyjęto ujęcie rzeczywistości wirtualnej zaproponowane w książce The VR Book autorstwa Jasona Jeralda. Rzeczywistość wirtualna rozumiana jest jako w pełni sztuczne, cyfrowe otoczenie generowane komputerowo, które wywołuje u użytkownika poczucie przebywania w innym miejscu lub świecie oraz umożliwia mu bezpośrednie doświadczanie i interakcję w sposób zbliżony do kontaktu z rzeczywistym środowiskiem (Jerald, The VR Book). W odróznieniu od tradycyjnych gier komputerowych oraz aplikacji, technologia ta nie ogranicza się tylko do obserwowania obrazu na ekranie lecz zakłada pełne zaangażowanie użytkownika. 
 
-Charakterystyka środowiska rzeczywistości wirtualnej (VR)
-Technologia rzeczywistości wirtualnej polega na tworzeniu w pełni sztucznego otoczenia, które wywołuje poczucie przebywania w zupełnie innym miejscu lub świecie. Dzięki specjalistycznym urządzeniom, takim jak gogle czy kontrolery ruchu, możliwe staje się obserwowanie i oddziaływanie na generowane wirtualnie obiekty w czasie rzeczywistym. Rozwiązania z zakresu VR wykorzystują zaawansowane techniki renderowania grafiki, precyzyjnie śledzą ruch głowy i dłoni, a także uwzględniają dźwięk przestrzenny, co pozwala na osiągnięcie wysokiego stopnia imersji. Technologia ta znajduje zastosowanie nie tylko w obszarze gier i rozrywki, lecz również w szkoleniach branżowych, symulacjach medycznych \ref{vr_example} i architektonicznych oraz w przemyśle, gdzie służy do prototypowania i prezentacji projektów. Wirtualna rzeczywistość sprzyja ograniczaniu kosztów wdrożeń oraz podnoszeniu efektywności procesów nauki i projektowania, ponieważ umożliwia wielokrotne testowanie różnych scenariuszy w ściśle kontrolowanym środowisku.
+Dzięki specjalistycznym urządzeniom, takim jak gogle czy kontrolery ruchu, możliwe staje się obserwowanie i oddziaływanie na generowane wirtualnie obiekty w czasie rzeczywistym. Rozwiązania z zakresu VR wykorzystują zaawansowane techniki renderowania grafiki, precyzyjnie śledzą ruch głowy i dłoni, a także uwzględniają dźwięk przestrzenny. Może angażować nie tylko słuch i wzrok ale również dotyk poprzez kontrolery haptyczne. Wirtualna rzeczywistość odziałowywuje na różne \textbf{zmysły}, aby maksymalnie zwiększyć zanurzenie użytkownika i osiągnięcie wrażenia, że świat wirtualny jest prawdziwy a użytkownik jest w nim naprawdę obecny. 
+
+Do opisu doświadczeń w grach często stosowane jest pojęcie immersja oraz obecność. Słowa te są czesto mylnie stosowane jako synonimy choć odnoszą się do rożnych aspektów VR. Różnice między tymi pojęciami dość trafnie opisał Jerald w swojej książce book. Zaznacza on, że Imersja nawiązuje do cech VR, do tego w jak mocno oddziałowują na na zmysły użytkownika. Natomiast obecność odnosi się do subiektywnego wrażenia i odczucia użytkownika że znajduje się w świecie wirtualnym. W kontekscie gier VR te słowa mają szczególne znaczenie, są zależne od tego jak zaprojektowana jest cała gra. 
 
 \begin{figure}[!htb]
     \centering
@@ -18,23 +21,36 @@ Technologia rzeczywistości wirtualnej polega na tworzeniu w pełni sztucznego o
 
 \subsection{Ergonomia, percepcja i ograniczenia użytkownika}
 
-W grach komputerowych czy aplikacjach rzadko zdarza się aby użytkownik odczuwał dyskomfort fizyczny, jedynym czynnikiem mogącym zakłócić poczucie komfortu jest natknięcie się na elementy wywołujące fobie, takie jak arachnofobia czy klaustrofobia. VR oferuje o wiele większą immersję niż gry na komputer i pozwala użytkownikowi na pełne zanurzenie się w rozgrywkę, ale tworzenie treści do tego środowiska wymaga zachowania większej ostrożności, aby uniknąć efektów ubocznych. Jednym z nich jest choroba symulatorowa (VR sickness).
+W grach komputerowych czy aplikacjach rzadko zdarza się aby użytkownik odczuwał dyskomfort fizyczny. VR angażuje urzytkownika intensywniej niż tradycyjne rozgrywki na komputer i pozwala użytkownikowi na pełne zanurzenie się w rozgrywkę. Tworzenie treści do tego środowiska wymaga uwzględnienia ograniczeń percepcyjnych i fizjologicznych człowieka. Jednym z efektów braku takiego podejścia jest wystąpienie objawów choroby symulatorowej (VR sickness). Objawia się najczęściej mdłościami, zawrotami głowy czy ogólna dezorientacją. Według ksiązki 3D User Interfaces: Theory and Practice (book) (3D user Interfaces Theory and Practice) jest ona spowodowana niespójnością pomiędzy tym, co użytkownik widzi czyli ruch w świecie wirtualnym, a tym, co odczuwa jego ciało czyli brak fizycznego ruchu. Z tego wzgledu bardzo istotne jest tempo interakcji, ograniczenie gwałtwonych zmian perspektywy i widoku oraz przewidywalność zachowań systemu ponieważ to miedzy innymi one będą miały wpływ na długie i komfortowe korzystanie z urządzenia. 
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\textwidth]{images/VRSICK.png}
-    \caption{Przykładowy wygląd edytora Unity}
+    \caption{VR sickness}
     \label{unity_engine_example}
 \end{figure}
+(3D user Interfaces Theory and Practice)
 
-Choroba ta jest bardzo powszechna wśród osób korzystających z wirtualnej rzeczywistości. Objawia się najczęściej mdłościami, zawrotami głowy czy ogólna dezorientacją. \textbf{}{Komfort użytkownika i jego adaptacja fizyczna} jest więc kluczowymi aspektami projektowania interfejsów użytkownika. (3D user Interfaces Theory and Practice)
 
-Interakcje z produktami na komputery i telefony opierają się głownie na płaskich bodźcach wizualnych i dźwiękowych. Ogranicza to poziom zaangażowania odbiorcy i wpływa na mniej intensywne doświadczenia. Natomiast wirtualne środowisko może angażować nie tylko słuch i wzrok ale również dotyk poprzez kontrolery z haptyczna czy wibracje. Wirtualna rzeczywistość angażuje różne \textbf{zmysły}, aby maksymalnie zwiększyć zanurzenie użytkownika w cyfrowym świecie i zapewnić mu jak najlepsze doznania. Podane różnice dowodzą, że projektowanie interfejsu dla VR wymaga zupełnie innego podejścia niż w przypadku tradycyjnych gier i aplikacji. 
+Zaangażowanie całego ciała w przypadku gier VR nakłada również pewne ograniczenia na projektantów. Jednym z nich jest to że niewłasciwe ułożenie obiektów na scenie lub wymuszenie utrzymywania dłoni w nienaturalnej pozycji przez dłuższy czas może prowadzić do szybkiego zmęczenia. Z tego powody należy uwzględnić naturalny zakres ruchu człowieka aby wszelkiego rodzaju interakcje mogły być wykonywane bez nadmiernego wysiłku fizycznego.  (book) jerald
+
+Problematycznym może okazać się samo umieszczenie obiektów interaktywnych w środowisko wirtualnym. Pole widzenia w googlach jest ograniczone nie tylko ze względu na konstrukcje urządzeni ale również naszych indywidualnych cech anatomicznych jak rozstaw źrenic. Ma to istotny wpływ na odbiór interfejsu i rozmieszczenie informacji w przestrzeni. Jak wykazują badania  Sauer i współpracowników (2022),  article (Assessment of consumer VR). pole widzenia jakie deklarują producenci zestawów VR jest inne niż rzeczywistosci a jego zakres zależy fizjologi odbiorcy. Umieszczenie kluczowych elementów poza zakresem widzialnym będzie prowadził do ich przeoczenia lub wymuszenia zbędnych ruchów i w rezultacie zmęczenia lub irytacji. 
+%Ten fragment cały ma informacje z dwoch ksiazek i jednego artykulu i nie wiem jak cytować  (Jerald, 2015; LaViola et al., 2017; Sauer et al., 2022).
+Z tego względu należy stosować nie tylko teoretyczne założenia techniczne podane przez producenta ale również empiryczne ograniczenia odbiorców. 
+
+ 
 
 \subsection{Typy interfejsów VR (2D, 3D, diegetyczne, systemowe)}
 
-Projektowanie interfejsu do VR może odbywać się na kilka różnych sposobów różniących się od siebie sposobem integracji z wirtualnym środowiskiem i tym jak prezentowane są istotne informacje. Aby odpowiednio przygotować się do projektowania, należy zapoznać się z najczęściej stosowanymi rozwiązaniami w istniejących już na rynku produktach. Należy zrozumieć, co twórcy gier uznali za ważniejsze, pełną immersję czy raczej stawiali na tradycyjne menu i lewitujące w przestrzeni wirtualnej panele. W pierwszej kolejności warto jednak poznać kilka podstawowych rodzajów interfejsów i czym się charakteryzują. Pozwoli to na lepsze zrozumienie jak i kiedy są one wykorzystywane. Na potrzeby analizy zastosowano podział interfejsów na cztery najczęściej stosowane rodzaje. Interfejs jako część świata gry, Klasyczny panel menu (Non-diegetic UI), Interfejs przestrzenny oraz Meta.
+Projektowanie interfejsu do VR może odbywać się na różne sposoby, różniące się stopniem integracji z wirtualnym środowiskiem i tym jak prezentowane są istotne informacje. Aby odpowiednio przygotować się do projektowania, należy przeanalizować rozwiązania stosowane w istniejących produktach. Należy zrozumieć, co twórcy gier uznali za ważniejsze, pełną immersję czy raczej stawiali na tradycyjne menu i lewitujące w przestrzeni wirtualnej panele. W pierwszej kolejności warto jednak poznać kilka podstawowych rodzajów interfejsów i czym się charakteryzują. Pozwoli to na lepsze zrozumienie jak i kiedy są one wykorzystywane.W niniejszej analizie przyjęto podział interfejsów na cztery główne typy:
+
+Interfejs jako część świata gry, Klasyczny panel menu (Non-diegetic UI), Interfejs przestrzenny oraz Meta.
 Pierwszy rodzaj polega na wpleceniu interfejsu w elementy już istniejące w świecie wirtualnym, użytkownik żeby go zobaczyć musi fizycznie skierować głowę na dany element. Drugi z kolei wykorzystuje tradycyjny panel menu, ktory możemy spotkać na stronach internetowych czy w grach na komputer. Elementy interfejsu nie są częścią świata gry a sam panel jest nakładką na widok użytkownika. Kolejne podejście to interfejs przestrzenny, jest on połączeniem digetycznych i niedigetycznych.  Stanowi często część środowiska wirtualnego i jest w nim wyświtlany ale nie jest widoczny przez postacie. Ostatni typ to Meta, któy służy do reprezentacji statusu naszej postaci nie pojawiając się jednocześnie w świecie gry
+%Interfejs diegetyczny – wpleciony w świat gry; użytkownik musi fizycznie spojrzeć na dany obiekt, aby zobaczyć informacje (np. zegarek na nadgarstku postaci).
+%Interfejs niediegetyczny (klasyczny panel menu) – elementy UI nie są częścią świata gry, lecz nakładką na widok użytkownika (np. menu pauzy).
+%Interfejs przestrzenny – zakotwiczony w przestrzeni wirtualnej, ale niekoniecznie istniejący w świecie gry z perspektywy postaci (np. menu przypięte do ściany).
+%Interfejs statusowy (HUD) – reprezentuje stan postaci (np. poziom zdrowia), nie pojawiając się fizycznie w świecie gry.
+
 
 
 \subsection{Przegląd interfejsów użytkownika w środowiskach VR(Najczęściej spotykane UI w VR}
