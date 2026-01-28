@@ -2,9 +2,9 @@
 
 \section{ Cel i zakres analizy}
 
-Celem przeprowadzenia analizy istniejących rozwiązań projektowych było zbadanie, w jaki sposób w dostępnych na rynku grach wirtualnej rzeczywistości realizowane są interfejsy użytkownika oraz mechanizmy interakcji. Przyjęte podejście koncentrowało się na ocenie tych rozwiązań z perspektywy zasad użyteczności, w celu rozpoznania potencjalnych problemów wynikających z przyjętych decyzji projektowych. Obejmowała również identyfikację powtarzalnych wzorców rozwiązań, pojawiających się w różnych produkcjach VR, niezależnie od ich gatunku czy posiadanego budżetu.
+Celem przeprowadzenia analizy istniejących rozwiązań projektowych było zbadanie, w jaki sposób w dostępnych na rynku grach wirtualnej rzeczywistości realizowane są interfejsy użytkownika oraz mechanizmy interakcji. Wybór użyteczności jako podstawowego kryterium oceny wynika z natury środowiska wirtualnej rzeczywistości, w którym każdy błąd interfejsu może natychmiast zakłócić doświadczenie użytkownika. W VR użytkownik nie patrzy na świat z boku lecz jest w nim obecny co sprawia że intuicyjność, kontrola i czytelność stają się warunkami koniecznymi skutecznej interakcji. Z tego powodu, zgodnie z rekomendacjami Nielsen Norman Group (2021), do analizy przyjęto zasady użyteczności Jakoba Nielsena. Pierwotnie sformułowane dla interfejsów dwuwymiarowych po dostosowaniu znajdują zastosowanie również w VR, o ile są interpretowane w kontekście jego specyfiki. Przyjęte podejście koncentrowało się na rozpoznaniu potencjalnych problemów oraz typowych kompromisów wynikających z przyjętych decyzji projektowych w środowisku VR. Obejmowała również identyfikację powtarzalnych wzorców rozwiązań, pojawiających się w różnych produkcjach VR, niezależnie od ich gatunku czy posiadanego budżetu.
 
-W procesie badawczym skupiono się na funkcjach interfejsu, które bezpośrednio wpływają na płynność rozgrywki i komfort użytkownika podczas korzystania z gry. Wśród analizowanych obszarów znalazły się takie elementy jak menu systemow, zarządzanie ekwipunkiem, mechenizmy poruszania się w wirtualnym świecie czy sposoby przekazywania informacji zwrotnych przez system. Wybranie właśnie tych elementów wynikało z założenia, że to te obszary stanowią potencjalne źródło problemów użytkowych i mogą prowadzić do zaburzenia odbioru rozgrywki w środowisku VR.
+W procesie badawczym skupiono się na funkcjach interfejsu, które bezpośrednio wpływają na płynność rozgrywki i komfort użytkownika podczas korzystania z gry. Wśród analizowanych obszarów znalazły się takie elementy jak menu systemowe, zarządzanie ekwipunkiem, mechenizmy poruszania się w wirtualnym świecie czy sposoby przekazywania informacji zwrotnych przez system. Wybranie właśnie tych elementów wynikało z założenia, że to te obszary stanowią potencjalne źródło problemów użytkowych i mogą prowadzić do zaburzenia odbioru rozgrywki w środowisku VR.
 
 W niniejszej pracy zastosowano jakościową ocene ekspercką obejmującą heurystyczną ocene zidentyfikowanych wzorców projektowych. Badanie dotyczyło sposobu funkcjonowania poszczególnych rozwiązań interfejsowych oraz mechanizmów interakcji. Uwzględniono przy tym specyfikę środowisk wirtualnej rzeczywistości, taką jak interakcje przestrzenne, konieczność angażowania ruchu ciała oraz zwiększone obciążenie poznawcze użytkownika niż w przypadku klasycznych gier komputerowych. Ewaluacja miała pomóc określić, w jakim stopniu przyjęte rozwiązania wspierają czytelność interfejsu, poczucie kontroli oraz stopień przewidywalnosci działania systemu. Na tym etapie nie uwzględniano subiektywnych odczuć graczy; ocenę prowadzono pod kątem zgodności rozwiązań z przyjętymi zasadami projektowania interfejsów i interakcji.
 
@@ -18,7 +18,9 @@ Identyfikacja wzorców opierała sie na kilku kryteriach. Jednym z nich była ic
 
 Proces identyfikacji przebiegał w sposób uporządkowany: w pierwszej kolejności prowadzono obserwację rozwiązań interfejsowych i interakcyjnych występujących w grach VR, następnie wyodrębniono główne funkcje interfejsu i interakcji, a w ostatnim kroku przypisano do nich konkretne wzorce projektowe. W przypadkach, w których dane rozwiązanie łączyło cechy więcej niż jednego podejścia, wyodrębniano osobny wzorzec hybrydowy, zamiast wymuszać jego przypisanie do jednej kategorii. Proces identyfikacji wzorców koncentrował się wyłącznie na aspektach funkcjonalnych i interakcyjnych analizowanych rozwiązań. Na żadnym etapie badania nie analizowano warstwy estetycznej interfejsu, takiej jak styl graficzny, kolorystyka czy forma wizualna elementów. Takie podejście było działaniem celowym i uzasadnionym przyjętym celem analizy, którym była ocena sposobów realizacji funkcji oraz organizacji interakcji, a nie ocena atrakcyjności wizualnej rozwiązań.
 
-W drugim etapie zidentyfikowane wzorce poddano heurystycznej ocenie z wykorzystaniem jednolitego zestawu zasad użyteczności. Zestaw heurystyk został oparty na zasadach użyteczności dla środowisk wirtualnej rzeczywistości opracowanych przez Nielsen Norman Group (article) %(https://www.nngroup.com/articles/usability-heuristics-virtual-reality/),. Zestaw ten obejmuje następujące heurystyki:
+W drugim etapie zidentyfikowane wzorce poddano heurystycznej ocenie z wykorzystaniem jednolitego zestawu zasad użyteczności. Zestaw heurystyk zastosowany w analizie opiera się na klasycznych zasadach użyteczności Jakoba Nielsena, które zgodnie z rekomendacjami Nielsen Norman Group (2021) pozostają trafne również w kontekście wirtualnej rzeczywistości. W niniejszej pracy wykorzystano sześć heurystyk (H1–H6), które najbardziej bezpośrednio odnoszą się do analizowanych funkcji interfejsu.
+
+%(https://www.nngroup.com/articles/usability-heuristics-virtual-reality/),. Zestaw ten obejmuje następujące heurystyki:
 
 \begin{enumerate}
     \item \textbf{H1 – Widoczność stanu systemu}  
@@ -42,7 +44,7 @@ W drugim etapie zidentyfikowane wzorce poddano heurystycznej ocenie z wykorzysta
 
 W dalszej części pracy heurystyki te są oznaczane skrótami H1–H6.
 
-Ocena ta miała na celu określenie stopnia zgodności poszczególnych wzorców z przyjętymi heurystykami oraz wskazanie potencjalnych ograniczeń użyteczności wynikających z przyjętych decyzji projektowych. Podstawowym założeniem metody było rozdzielenie analizy według funkcji interfejsu. Dla każdej analizowanej funkcji przygotowano osobny zestaw tabel, co pozwoliło zachować spójność kontekstu analizy oraz czytelność porównań pomiędzy różnymi rozwiązaniami projektowymi.
+Pozostałe heurystyki (np. elastyczność, estetyka, dokumentacja) uznano za mniej istotne dla celu badania, skupionego na podstawowych mechanizmach interakcji i komunikacji systemu. Ocena ta miała na celu określenie stopnia zgodności poszczególnych wzorców z przyjętymi heurystykami oraz wskazanie potencjalnych ograniczeń użyteczności wynikających z przyjętych decyzji projektowych. Podstawowym założeniem metody było rozdzielenie analizy według funkcji interfejsu. Dla każdej analizowanej funkcji przygotowano osobny zestaw tabel, co pozwoliło zachować spójność kontekstu analizy oraz czytelność porównań pomiędzy różnymi rozwiązaniami projektowymi.
 
 W każdej tabeli..
 
@@ -122,6 +124,8 @@ Menu diegetyczne (element świata gry) & C & S & C & C & C & C \\
 \hline
 Klasyczne menu 2D w VR (element świata gry) & S & N & C & S & C & N \\
 \hline
+Menu kontekstowe (aktywowane przez użytkownika) & S & S & S & S & S & C \\
+\hline
 \end{tabular}
 
 \vspace{0.5em}
@@ -183,6 +187,8 @@ Hybryda teleport + smooth & S & C & S & C & C & C \\
 \hline
 Fizyczne przemieszczanie (room-scale) & S & S & S & S & C & S \\
 \hline
+Lokomocja z mechanizmami komfortu & S & C & S & S & S & C \\
+\hline
 \end{tabular}
 
 \vspace{0.5em}
@@ -229,3 +235,29 @@ N/A – heurystyka nie ma zastosowania.
 
 \section{Podsumowanie analizy i Wnioski}
 
+Przeprowadzona analiza heurystyczna miała na celu zidentyfikowanie i porównanie wzorców projektowych i interakcji w grach VR oraz ocena ich zgodności z zasadami użyteczności. Miało to ułatwić wskazanie potencjalnych ograniczeń istotnych dla dalszych decyzji projektowych. Podczas badania nie oceniano poszczególnych tytułów a zidentyfikowane wzorce realizujące te same funkcje interfejsu. Były one identyfikowane na podstawie obserwacji rozwiązań występujących w wybranych grach. Takie podejście umożliwiło porównanie alternatywnych podejść projektowych w sposób niezależny od kontekstu użycia.
+Dobór materiału badawczego dał możliwość rozpoznania większości najważniejszych funkcji interfejsu i interakcji obejmujących menu systemowe, zarządzanie ekwipunkiem, mechanizmy poruszania się oraz informację zwrotną systemu. Pojedzyncze gry często zawierały więcej niż jeden wzorzec realizujący tą samą funkcję. Uwzględnienie ich w materiale badawczym było świadomym posunięciem autorki pracy. Miało pozwolić na analize współistnienia różnych rozwiązań w tym samym środowisku wirtualnym. Wyselekcjonowany zestaw gier okazał sie wystarczający do wyodrębnienia powtarzalnych wzorców dlatego zdecydowano że nie ma potrzeby dodawania innych tytułów ponieważ nie wpłynełoby to istotnie na zakres zidentyfikowanych rozwiązań.
+
+
+
+
+
+
+
+Przeprowadzona ocena heurystyczna wykazała, że żaden z analizowanych wzorców nie spełnia jednoznacznie wszystkich heurystyk. Najczęściej występującym wynikiem było częściowe spełnienie zasad użyteczności. Wskazywało to na obecność nieuniknionych kompromisów projektowych. Zaobserwowane naruszenia wynikały zazwyczaj nie z błędów implemnetacyjnych a z charakteru danego wzorca i specyfiki środowiska wirtualnego w którym pełne zastosowanie wszystkich zasad jednocześnie jest często niemożliwe. Z tego względu postanowiono, że przy analizie ogólnego poziomu zgodności wzorców z heurystykami uwzględnia się zarówno pełne, jak i częściowe spełnienie poszczególnych zasad.Początkowo planowano uwzględnić tylko pełne spełnienie w ogólnej ocenie ale uznano, że pominięcie przypadków „częściowego spełnienia” prowadziłoby do nadmiernego uproszczenia i ewaluacja nie oddawałaby faktycznego stopnia dostosowania rozwiązań do zasad użyteczności.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Uzyskane obserwacje stanowią punkt wyjścia do dalszych etapów pracy, w szczególności do projektowania i implementacji własnego rozwiązania interfejsowego. Analiza pozwoliła również wskazać obszary wymagające szczególnej uwagi w kolejnych etapach, takie jak mechanizmy poruszania się oraz sposoby przekazywania informacji zwrotnej.
+
+Należy podkreślić, że przeprowadzona analiza miała charakter ekspercki i została wykonana przez jednego ewaluatora. Ocena dotyczyła wzorców projektowych, a nie całościowych doświadczeń użytkowników. W kolejnym rozdziale przedstawiono perspektywę użytkowników, umożliwiając zestawienie obserwacji heurystycznych z doświadczeniami deklarowanymi w badaniu ankietowym.
