@@ -8,10 +8,99 @@
 
 
 \section{Implementacja}
-\subsection{ Środowisko i konfiguracja projektu Unity VR}
-\subsection{ Architektura interfejsu VR}
-\subsection{ Implementacja elementów UI (2D, 3D)}
-\subsection{ Implementacja interakcji (pointer, direct touch, gesty)}
-\subsection{ Wdrażanie rozwiązań UX z prototypu Figma}
-\subsection{ Testy techniczne, optymalizacja i stabilność}
+\subsection{Środowisko i konfiguracja projektu Unity VR}
+
+Do celów implementacyjnych wykorzystano silnik Unity 3D, który wyróżnia się szczegółową dokumentacją i szeroką bazą paczek umożliwiających integrację z wirtualną rzeczywistością. Twórcy silnika przygotowali również specjalny szablon projektu, zawierający integrację z paczką Oculus Meta oraz przykładową scenę z interaktywnymi obiektami i instrukcją.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=1\textwidth]{images/chapter5/5_1.png}
+    \caption{Przykładowa scena w Unity z szablonu wirtualnej rzeczywistości}
+    \label{unity_vr_template}
+\end{figure}
+
+Bardzo specyficzne jest tworzenie aplikacji w wirtualnej rzeczywistości, ponieważ rozgrywka opiera się głównie na wykorzystaniu specjalnych okularów VR oraz joysticków będących wirtualnymi rękami. Ich brak uniemożliwia poprawne testowanie interakcji ze światem. Ponadto regularne weryfikowanie zmian wymaga od użytkownika częstego przenoszenia się z ekranu monitora na tryb VR, gdzie każde zakładanie gogli może być męczące.
+
+W tym celu stworzono tryb symulacyjny, który pozwala na testowanie w uproszczony sposób wszystkich elementów wirtualnego awatara bezpośrednio przy użyciu klawiatury i myszy. Nie jest to zbyt intuicyjne rozwiązanie z uwagi na to, ile funkcji musi zostać tutaj obsłużonych, ale pozwala skupić się na tworzeniu funkcjonalności i wstępnym testowaniu rozgrywki, zanim aktualizacja trafi do działu testerów.
+
+Przykładowa scena testowa widoczna na obrazku powyżej (\ref{unity_vr_template}) zawiera film, prosty dwuwymiarowy interfejs użytkownika oraz kilka interaktywnych elementów, takich jak strzelający pistolet, skalowalna piłka oraz obracalna kula umieszczona sztywno na piedestale. Pozwala to zapoznać się z podstawową interakcją oraz zobaczyć, jakie komponenty są użyte, aby móc stworzyć samodzielnie podobny obiekt.
+
+\subsection{Architektura środowiska VR i struktura scen}
+
+Aby utworzyć odpowiednie środowisko testowe, należy wybrać odpowiedni typ gry, który w łatwy i naturalny sposób umożliwi wdrożenie odpowiednich scenariuszy do badań. Dlatego nie sprawdzi się tutaj gatunek akcji lub gra rytmiczna, gdzie przede wszystkim ważna jest dynamika i efekty audiowizualne. Najbardziej odpowiednią platformą do przeprowadzenia badań jest coś z wolniejszą narracją i niskim progiem wejścia.
+
+Wybrany został gatunek o nazwie \textit{exploration puzzle game}, który w odpowiednio uproszczonym prototypie umożliwi przetestowanie różnych podejść do projektowania interfejsu użytkownika oraz przeprowadzenie badań na przygotowanych scenariuszach.
+
+Rozgrywka została podzielona na etapy, które oferują inny typ środowiska oraz niezależne wyzwania, które umożliwią zweryfikowanie, ile czasu zajmie wykonanie użytkownikom danego zadania oraz ile prób będą wymagać, aby ukończyć cały etap. Każdy etap oferuje dwa tryby integracji interfejsu w świecie gry, aby dokładniej zbadać zalety i wady każdego rozwiązania. Trzeci tryb to połączone rozwiązania, aby znaleźć złoty środek i udowodnić, że najlepszym rozwiązaniem jest umiejętne wykorzystanie obu technik.
+
+Pierwszy sposób integracji interfejsu użytkownika opiera się na latających dwuwymiarowych diagramach, które zawsze są obrócone w kierunku gracza i umożliwiają sterowanie poszczególnymi elementami interfejsu poprzez specjalne lasery wydobywające się z palców wskazujących gracza. Ten sam sposób został wykorzystany na scenie testowej na zdjęciu \ref{unity_vr_template} umieszczonym powyżej.
+
+Drugi sposób opiera się na maksymalnym wykorzystaniu fizycznych obiektów w świecie gry, aby zwiększyć imersję użytkownika i wykorzystać w pełni potencjał wirtualnej rzeczywistości. Zamiast płaskiego interfejsu część opcji ukryta jest w interaktywnej książce wyciąganej z pasa awatara, a zamiast latających diagramów poszczególne wskazówki zostają zintegrowane pod postacią listów i napisów na ścianach.
+
+Technika ta jest również częściowo wykorzystywana w zwykłych grach, jednak największą różnicą jest to, że tam użytkownik nie ma możliwości naturalnej interakcji z takimi obiektami. W wirtualnej rzeczywistości Znacznie ciekawsze jest podniesienie listu i przeczytanie go fizycznie trzymając ten obiekt w rękach zamiast szukać odpowiedniego przedmiotu w swoim ekwipunku będącego reprezentacją dwuwymiarową na ekranie.
+
+\subsection{Model interakcji użytkownika w środowisku VR}
+
+W odróżnieniu od tradycyjnych gier, interakcja w VR opiera się na przestrzennym i interaktywnym działaniu użytkownika wykorzystującym ruchy głowy, rąk, a nawet całego ciała, aby na przykład schylić się po jakiś przedmiot. Pozwala to na bardzo realistyczne podejście do tematu i obsłużenie wszystkich przypadków, co przydaje się przede wszystkim w symulatorach medycznych, gdzie bardzo ważne jest odwzorowanie każdego zachowania.
+
+Przyjęty model interakcji opiera się na cyklu, gdzie proces interakcji rozpoczyna się od intencji użytkownika. Dana osoba musi dokładnie wiedzieć, co może zrobić oraz znać swoje ograniczenia, aby nie próbować podejmować czynności, które nie zostały przewidziane przez twórców aplikacji.
+
+Następnie następuje realizacja intencji poprzez fizyczną akcję, która przyjmuje formę konkretnego gestu lub działania, np. pociągnięcie dźwigni lub pobiegnięcie do celu. W tym celu użytkownik musi odpowiednio się obrócić, odpowiednio ułożyć pozę ciała i kliknąć odpowiednie przyciski na joysticku, aby zarejestrować odpowiednie akcje.
+
+Ostatnim etapem cyklu jest sama reakcja systemu, która stanowi informację zwrotną dla użytkownika. Może się to objawiać poprzez zmianę stanu świata gry oraz komunikaty wizualne i dźwiękowe. Istotne jest, aby użytkownik na ich podstawie wiedział, że wykonał czynność poprawnie oraz czego może się po tej akcji spodziewać. W zwykłych grach może się to objawiać poprzez odtworzenie krótkiej animacji, gdzie kamera przelatuje przez planszę i pokazuje otwarte drzwi. W wirtualnej rzeczywistości nie jest to możliwe.
+
+Model interakcji został zaprojektowany w oparciu o jasno określone ograniczenia i możliwości awatara. Użytkownik może wchodzić w interakcję wyłącznie z elementami jednoznacznie oznaczonymi jako interaktywne oraz wykonywać akcje zgodne z kontekstem aktualnego etapu, na przykład wspinać się dopiero na ostatnim etapie. Użytkownik może do tego wykorzystać różne formy interakcji, takich jak wskazywanie, chwytanie oraz aktywacja obiektów.
+
+Nie jest jednak możliwe, aby użytkownik mógł wchodzić w interakcję z elementami pełniącymi wyłącznie funkcję dekoracyjną oraz wpływać na logikę zadań w sposób omijający zaprojektowane mechaniki gry. Dlatego elementy interaktywne powinny na pierwszy rzut oka być bardziej istotne i ciekawe dla użytkownika
+
+Istotną formą interakcji jest lokomocja, czyli poruszanie się wykorzystując ruch ciągły oraz teleport. Umożliwia to sterowanie w sztuczny sposób wirtualnym awatarem, gdyż sam użytkownik ma ograniczony obszar ruchu.
+
+\subsection{Implementacja interaktywnych elementów i technik interakcji}
+
+Zintegrowana z szablonem projektu paczka integracyjna do wirtualnej rzeczywistości zawiera odpowiedniego rodzaju komponenty, które umożliwiają nadanie odpowiednich funkcjonalności surowym obiektom na scenie. Całość jest zintegrowana z ekosystemem wirtualnej rzeczywistości oraz wspiera dodatkowe rzeczy takie jak niestandardowe gesty joysticków. Przy implementacji nowych systemów istotne jest opieranie się na gotowych rozwiązaniach, które można w dowolny sposób rozszerzać i modyfikować.
+
+Umożliwia to szybsze wdrożenie się w wirtualną rzeczywistość i skupienie się na samym implementowaniu rozgrywki i jej niezależnych systemów zamiast przygotowywać surową integrację z modułem VR. Sprawia to, że próg wejścia jest znacznie mniejszy.
+
+XR Grab Interactable
+XR Knob
+
+
+\subsection{Architektura i implementacja interfejsu użytkownika}
+
+- rolę UI w systemie,
+- podział na:
+   - elementy 2D,
+   - elementy 3D / diegetyczne,
+   
+- powiązanie UI z interakcją,
+- różnice implementacyjne między wariantami A i B (bez oceniania).
+
+\subsection{System podsumowania zadan i przechodzenia miedzy etapami}
+
+- koncepcja windy jako:
+    - elementu świata,
+    - mechanizmu przejścia,
+    - system ładowania kolejnych scen,
+    - ekranu podsumowania
+
+- dlaczego to rozwiązanie:
+    - ogranicza dezorientację,
+    - wspiera ciągłość doświadczenia,
+    - jest lepsze niz standardowe ekrany podsumowania w grach
+
+- implementacja zadan i podsumowania:
+    - kiedy i jak użytkownik otrzymuje podsumowanie,
+    - jakie informacje są przekazywane,
+    - forma prezentacji (UI / świat),
+    - w jaki sposob zaimplementowano system
+    - w jaki sposob wdrazac system do istniejacych scen
+
+
+\subsection{Integracja rozwiązań UX z etapu prototypowania}
+
+- które założenia projektowe zostały przeniesione,
+- co wymagało modyfikacji w VR,
+- różnice między prototypem a implementacją,
+- ograniczenia techniczne.
+
 %\subsection{Podsumowanie implementacji}
