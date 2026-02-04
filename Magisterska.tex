@@ -20,6 +20,10 @@
 \usepackage{polski}
 \usepackage{colortbl}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{url}
 \usepackage{setspace}
 \usepackage{indentfirst}
@@ -27,8 +31,9 @@
 \usepackage{beramono}
 \usepackage[section]{placeins}
 \usepackage{csquotes}
+\usepackage{comment}
 \usepackage{carlito} % Dodanie czcionki Carlito
-\usepackage[%backend=biber,refsegment=section,defernumbers=true,]{biblatex}
+\usepackage[backend=biber,refsegment=section,defernumbers=true,]{biblatex}
 
 
 \lstset{ %
@@ -81,16 +86,37 @@ Opisano również dalsze możliwości rozwoju gry.
 
 \introduction
 
-Rzeczywistość wirtualna dynamicznie się rozwija i znajduje wykorzystanie w coraz szerszym zakresie dziedzin, takich jak edukacja, architektura, medycyna czy budownictwo. VR umożliwia użytkownikom przeżywanie doświadczeń niemożliwych lub (problematycznych?) do osiągnięcia w prawdziwym życiu. 
+Rzeczywistość wirtualna dynamicznie się rozwija i znajduje zastosowanie w coraz szerszym zakresie dziedzin, takich jak edukacja, architektura, medycyna czy budownictwo. Technologia VR umożliwia użytkownikom przeżywanie doświadczeń, które są trudne lub niemożliwe do osiągnięcia w rzeczywistych warunkach, a jednocześnie wymaga od projektantów zupełnie innego podejścia do sposobu komunikacji z użytkownikiem niż w przypadku klasycznych aplikacji dwuwymiarowych i trójwymiarowych.
+
 Jednym z kluczowych elementów wpływających na doświadczenia użytkowników jest odpowiednio zaprojektowany interfejs użytkownika (UI). Interfejsy te umożliwiają nie tylko łatwą i intuicyjną interakcję z produktem, ale są również wyjątkowo istotne w zapewnieniu odbiorcom komfortu i nieprzerwanej imersji, która jest kluczowym elementem VR. Projektowanie interfejsu użytkownika w rzeczywistości wirtualnej musi uwzględniać charakterystyczne cechy tej technologii, takie jak przestrzeń trójwymiarowa, specyficzne sposoby interakcji oraz różnorodne potrzeby użytkowników.
 
-Celem niniejszej pracy jest wybór oraz zaprojektowanie najbardziej optymalnego interfejsu użytkownika, który będzie charakteryzować się uniwersalnym zastosowaniem w różnych środowiskach VR. Praca ma na celu zidentyfikowanie najważniejszych elementów interfejsów użytkownika, które zapewnią największy komfort i nieprzerwaną immersję oraz zaprojektowanie gotowego rozwiązania.
-W ramach pracy zostaną zaprezentowane rożne podejścia do interakcji w wirtualnej rzeczywistości które następnie zostaną dostosowane do różnorodnych potrzeb użytkowników oraz uwzględnią ograniczenia motoryczne, sensoryczne czy poznawcze. Proces ten pozwoli na wybór najbardziej efektywnego i wszechstronnego rozwiązania, które można zastosować w rożnych aplikacjach i grach VR
+Jednym z kluczowych elementów wpływających na jakość doświadczenia użytkownika w środowisku wirtualnym jest odpowiednio zaprojektowany interfejs użytkownika. Interfejs w VR nie pełni wyłącznie roli warstwy informacyjnej, ale staje się częścią doświadczenia, wpływając bezpośrednio na poczucie immersji, obecności oraz poczucia kontroli nad wykonywanymi działaniami. Rozwiązania interfejsowe, które w tradycyjnych grach lub aplikacjach są neutralne lub niezauważalne, w środowisku wirtualnym mogą prowadzić do dezorientacji, dyskomfortu lub przerwania ciągłości doświadczenia. Projektowanie interfejsów użytkownika w rzeczywistości wirtualnej musi uwzględniać specyficzne cechy tej technologii, takie jak trójwymiarowa przestrzeń, bezpośrednie interakcje ruchowe, ograniczenia percepcyjne oraz zróżnicowane możliwości użytkowników. Pomimo rosnącej liczby gier i aplikacji VR, na rynku obserwuje się duże zróżnicowanie stosowanych rozwiązań interfejsowych, a wiele z nich powstaje bez jednoznacznej weryfikacji ich użyteczności w praktyce.
 
-Wybór tematu wynika z rosnącego zapotrzebowania na rozwój interfejsów użytkownika w VR, szczególnie w kontekście coraz to nowszych zastosowań tej technologi, takich jak edukacja medycyna czy budownictwo. Na rynku istnieje duża luka, jeśli chodzi o projektowanie zorientowane na człowieka (HCD) uniwersalnych interfejsów użytkownika, które byłyby zarówno dostępne jak i wygodne dla osób z rożnymi ograniczeniami. Po doświadczeniach z z różnymi grami i aplikacjami VR, zauważyłam, że wiele z nich nie spełnia oczekiwań w zakresie dostosowania do potrzeb osób z problemami motorycznymi lub sensorycznymi. Takie doświadczenia skłoniły mnie do podjęcia próby rozwiązania tych problemów i stworzenia rozwiązania, które zapewni komfort i dostępność dla wszystkich użytkowników.
+Celem niniejszej pracy nie jest stworzenie jednego, uniwersalnego rozwiązania interfejsowego, lecz porównanie dwóch odmiennych podejść do projektowania interfejsu użytkownika w grze VR, ograniczonej do jednego, wybranego gatunku gier. W ramach pracy zaprojektowane i zaimplementowane zostaną dwa różne interfejsy użytkownika, realizujące te same funkcje, lecz oparte na odmiennych założeniach projektowych. Następnie oba rozwiązania zostaną poddane badaniom z udziałem użytkowników, którzy wykonają identyczne zadania w obu wariantach interfejsu. Badanie ma służyć jako narzędzie sprawdzające w jaki sposób zastosowane rozwiązania interfejsowe wpływają na efektywność wykonywania zadań, intuicyjność interakcji oraz subiektywny komfort użytkowania.
+
+Wybór tematu pracy wynika z rosnącego znaczenia jakości interfejsów użytkownika w grach wirtualnej rzeczywistości oraz z obserwowanego braku jednoznacznych, empirycznie weryfikowanych wytycznych projektowych w tym obszarze. Pomimo dynamicznego rozwoju technologii VR, wiele rozwiązań interfejsowych stosowanych w grach powstaje w sposób intuicyjny, a ich skuteczność rzadko bywa systematycznie porównywana w kontrolowanych warunkach. Szczególnie widoczny jest brak badań porównawczych, które pozwalałyby ocenić wpływ różnych podejść projektowych do interfejsu użytkownika na efektywność interakcji, komfort użytkowania oraz odbiór doświadczenia w obrębie jednego, spójnego kontekstu gatunkowego. Praca stanowi próbę odpowiedzi na tę lukę poprzez zestawienie dwóch odmiennych interfejsów użytkownika i ich empiryczną ocenę w badaniach z udziałem użytkowników.
 
 Podczas realizowania tego projektu napotkam szereg różnych wyzwań związanych z pełnieniem różnych rol w procesie tworzenia interfejsu użytkownika w rzeczywistości wirtualnej. Pierwszym z nich będzie konieczność dostosowania interfejsu do trójwymiarowej przestrzeni VR, co wiąże się z nowymi zasadami ergonomii i interakcji. Jako osoba odpowiedzialna za cały projekt, będę samodzielnie pełniła funkcje UX Rasearchera, UX/UI Designera, programisty oraz testera. Jako UX Researcher, będę miała za zadanie przeprowadzić badania użytkowników w celu identyfikacji potrzeb preferencji i punktów bólu w kontekście VR, a następnie zaprojektować interfejs dostosowany do rożnych grup odbiorców. Rola UX/UI designera wiąże się z zaprojektowaniem funkcjonalnych i estetycznych elementów interfejsu spójnych z wymaganiami rzeczywistości wirtualnej. Jako programistka będę odpowiedzialna za implementacje interfejsu i zapewnienie optymalizacji działania. Dodatkowo, jako tester, będę przeprowadzała testy, identyfikowała punkty bólu i problemy a następnie wprowadzała poprawki na podstawie uzyskanych wyników.
 
+Praca została podzielona na siedem głównych rozdziałów obejmujących część teoretyczną, analityczną, badawczą oraz projektowo‑implementacyjną. W pierwszym rozdziale wprowadzono kontekst rozwoju technologii wirtualnej rzeczywistości, omówiono znaczenie interfejsu użytkownika i interakcji w VR oraz wskazano kluczowe wyzwania projektowe i luki badawcze.
+
+Rozdział drugi poświęcony jest podstawom teoretycznym i tłu technologicznemu pracy. Przedstawiono w nim definicje i klasyfikacje VR, zagadnienia ergonomii i percepcji użytkownika, typy interfejsów oraz sposoby interakcji w środowiskach wirtualnych, a także omówiono wykorzystywane silniki, narzędzia i technologie.
+
+W trzecim rozdziale zaprezentowano analizę istniejących rozwiązań interfejsowych w wybranych grach VR, przeprowadzoną z wykorzystaniem heurystycznej oceny wzorców projektowych. Analiza ta obejmuje kluczowe funkcje interfejsu, takie jak menu systemowe, zarządzanie ekwipunkiem, mechanizmy poruszania się oraz sposoby przekazywania informacji zwrotnej.
+
+Rozdział czwarty zawiera opis badań wstępnych z udziałem użytkowników, których celem było zidentyfikowanie najczęściej występujących problemów, punktów bólu oraz czynników wpływających na komfort i immersję w grach VR. Uzyskane wyniki stanowiły podstawę do sformułowania założeń projektowych.
+
+W rozdziale piątym przedstawiono proces prototypowania i implementacji dwóch wariantów interfejsu użytkownika dla jednego wybranego gatunku gier VR. Opisano założenia projektowe, proces UX, tworzenie makiet i prototypów oraz implementację rozwiązań w środowisku Unity.
+
+Szósty rozdział poświęcony jest badaniom końcowym, obejmującym porównawczą ewaluację dwóch zaimplementowanych interfejsów. Badania przeprowadzono z udziałem użytkowników wykonujących te same scenariusze zadań, co pozwoliło na ocenę efektywności, intuicyjności i komfortu użytkowania obu wariantów.
+
+W ostatnim rozdziale dokonano podsumowania wyników pracy, ich interpretacji oraz oceny skuteczności zastosowanego procesu projektowego. Przedstawiono również ograniczenia pracy oraz możliwe kierunki dalszych badań i rozwoju analizowanych rozwiązań.
+
+
+
+
+
+\begin{comment}
 Praca została podzielona na 6 głównych rozdziałów. Pierwszy rozdział skupia się na wprowadzeniu do tematyki pracy, analizie dostępnych na rynku technologi VR oraz narzędziach które zostaną wykorzystane w projekcie. Zawiera analizę istniejących aplikacji VR pod kątem interakcji użytkownika oraz identyfikacje najlepszych praktyk i innowacji w projektowaniu  interfejsów VR.
 
  Zawiera skupi się na doborze odpowiednich narzędzi i technologii wykorzystywanych w projekcie, takich jak Figma, Unity, sprzęt VR oraz narzędzia analityczne, takie jak Google Forms. Zostaną omówione ich funkcjonalności i rola w procesie projektowania interfejsu w środowisku VR, Rozdział drugi wprowadza do ogólnych zasad projektowania interfejsów. Omówione zostaną kluczowe zasady UX/UI, takie jak ergonomia, intuicyjność, przejrzystość i użyteczność interfejsów. Następnie zostanie przedstawione, jak te zasady są dostosowywane do specyfiki rzeczywistości wirtualnej (VR), uwzględniając trójwymiarową przestrzeń i unikalne interakcje użytkowników w VR.. Rozdział trzeci będzie skupiał się na porównaniu interfejsów wykorzystywanych na tradycyjnych platformach z tymi występującymi w wirtualnej rzeczywistości. Zawiera szczegółową analizę wpływu trójwymiarowej przestrzeni VR na projektowanie interakcji oraz przedstawia wyzwania związane z adaptacją zasad UX/UI do specyfiki tej technologii. Rozdział czwarty zawiera proces projektowania interfejsu VR w narzędziach takich jak Figma jednocześnie omawiając proces tworzenia interaktywnych elementów i testowanie rożnych układów i metod interakcji. W piątym rozdziale uwzględniono implementacje zaprojektowanego rozwiązania w środowisku VR.
@@ -98,8 +124,7 @@ Praca została podzielona na 6 głównych rozdziałów. Pierwszy rozdział skupi
 W szóstym rozdziale zostanie wybrana odpowiednia metoda badawcza, najlepiej dopasowana do charakterystyki projektu oraz dostępnych zasobów. Celem tej części pracy jest zebranie informacji od użytkowników dotyczących użyteczności zaprojektowanego interfejsu. Po dokonaniu wyboru metody badawczej, przeprowadzone zostaną testy użytkowników, które pozwolą na ocenę intuicyjności, efektywności i komfortu interakcji z gotowym produktem. Po zakończeniu testów, uzyskane wyniki zostaną poddane analizie, co umożliwi dalszą optymalizację interfejsu. 
 %(tu nie wiem czy nie dodać rozdziału albo podrozdziału do sekcji badan z wprowadzeniem poprawek do punktow bólu wykrytych podczas badań)
 W zakończeniu pracy podsumowane zostaną główne wnioski oraz zaproponowane kierunki dalszych badań i rozwoju interfejsów VR, a także rozważone możliwości komercjalizacji opracowanych rozwiązań.
-
-%Mam problem z klawiaturą  - ó 
+\end{comment}
 
 \input{chapters/chapter1}
 \input{chapters/chapter2}
