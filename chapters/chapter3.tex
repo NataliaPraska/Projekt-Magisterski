@@ -54,7 +54,7 @@ Ocena wzorców została przeprowadzona w formie
 
 Przyjęty zestaw heurystyk pełni rolę ramy porównawczej, a nie sztywnego katalogu wymagań. Poszczególne heurystyki mogą mieć różne znaczenie interpretacyjne w zależności od analizowanej funkcji interfejsu, przy jednoczesnym zachowaniu ich wspólnego zastosowania dla wszystkich wzorców. Dla każdej heurystyki zastosowano trzystopniową skalę oceny: spełnia, częściowo spełnia oraz nie spełnia.
 
-Na potrzeby porównań pomiędzy wzorcami przyjęto, że heurystyka oznaczona jako „spełnia” traktowana jest jako spełniona w pełnym zakresie. Heurystyki ocenione jako „częściowo spełnia” lub „nie spełnia” nie są wliczane do liczby spełnionych heurystyk.  (Jeszcze myśle czy wliczac czy nie)
+Na potrzeby porównań pomiędzy wzorcami przyjęto, że heurystyka oznaczona jako „spełnia” traktowana jest jako spełniona w pełnym zakresie. Heurystyki ocenione jako „częściowo spełnia” brano pod uwage jako celowy kompromis zastosowany w celu zapewnienia lepszych doświadczeń.  „nie spełnia” nie są wliczane do liczby spełnionych heurystyk.  (Jeszcze myśle czy wliczac czy nie)
 
 
 
@@ -114,13 +114,11 @@ W ramach analizy menu systemowego uwzględniono wzorce różniące się sposobem
 \hline
 \textbf{Wzorzec projektowy} & H1 & H2 & H3 & H4 & H5 & H6 \\
 \hline
-Panel menu w przestrzeni przed użytkownikiem & S & C & S & S & C & C \\
-\hline
-Menu przypięte do kontrolera & C & C & S & C & C & N \\
+Klasyczne menu 2D w VR (element świata gry) & S & C & C & S & C & S \\
 \hline
 Menu diegetyczne (element świata gry) & C & S & C & C & C & C \\
 \hline
-Klasyczne menu 2D w VR (element świata gry) & S & N & C & S & C & N \\
+Panel menu w przestrzeni przed użytkownikiem & S & C & S & S & C & C \\
 \hline
 Menu kontekstowe (aktywowane przez użytkownika) & S & S & S & S & S & C \\
 \hline
@@ -139,7 +137,7 @@ N/A – heurystyka nie ma zastosowania.
 
 
 \subsection{Zarządzanie ekwipunkiem}
-Analiza zarządzania ekwipunkiem obejmuje wzorce różniące się stopniem diegetyczności oraz sposobem powiązania interfejsu z ciałem użytkownika lub obiektami świata gry. Ocena odnosi się do łatwości dostępu, rozpoznawalności stanu oraz kontroli nad wykonywanymi akcjami.
+Analiza zarządzania ekwipunkiem obejmuje wzorce różniące się stopniem digetyczności oraz sposobem powiązania interfejsu z ciałem użytkownika lub obiektami świata gry. Ocena odnosi się do łatwości dostępu, rozpoznawalności stanu oraz kontroli nad wykonywanymi akcjami.
 
 \begin{table}[htbp]
 \centering
@@ -184,8 +182,6 @@ Teleportacja punktowa & S & C & S & S & S & S \\
 Smooth locomotion & S & C & S & C & N & N \\
 \hline
 Hybryda teleport + smooth & S & C & S & C & C & C \\
-\hline
-Fizyczne przemieszczanie (room-scale) & S & S & S & S & C & S \\
 \hline
 Lokomocja z mechanizmami komfortu & S & C & S & S & S & C \\
 \hline
