@@ -2,9 +2,37 @@
 
 \section{Projektowanie rozwiązań}
 \subsection{ Założenia koncepcyjne i wybór gatunku gry}
-\subsection{ Charakterystyka porównywanych wariantów interfejsu (Wariant A i B)}
-\subsection{ Architektura informacji i scenariusze interakcji}
 
+ Projektowany prototyp został zaplanowany jako środowisko testowe w formie gry VR typu puzzle/exploration. Jego głównym celem nie jest rozbudowana rozgrywka fabularna, tylko umożliwienie pceny i porównania rożnych podejść do projektowania interfejsu użytkownika i interakcji w VR.  Wybór tego gatunku był spowodowany możliwością bezproblemowego osadzenia zadań interakcyjnych w przestrzeni, bez konieczności stosowania skomplikowanych mechanik, które nie należą do badanego zakresu. Postannowiono również o wyłaczeniu obszaru związanego z mechaniką ekwipunku, ponieważ pomimo początkowych przypuszczeń na etapie badania eksperckiego wyniki badan nie wskazywały na to, że ten element stanowi dla użytkowników problem krytyczny.  
+
+Założeniem koncepcyjnym wykonywanego projektu było stworzenie środowiska w którym użytkownik wykonuje serie z góry określonych zadań wymagających wykorzystania takich elementów jak nawigacja czy manipulacja obiektami i podejmowania prostych decyzji. Taki charakter rozgrywki pozwolił na zmniejszenie wpływu zewnętrznych czynników takich jak presja czasowa czy rywalizacja. W projekcie nie zakładano możliwości poniesienia porażki ani kar za błędne odpowiedzi. Miało to pozwolić na skupienie się na sposobie obsługi iinterfejsu i interakcji niezależnie od poziomu doświadczenia. 
+
+
+\subsection{ Charakterystyka porównywanych wariantów interfejsu (Wariant A i B)}
+
+Na podstawie analizy heurystycznej oraz badania ankietowego zdecydowano się na implementacje dwóch odmiennych wariantów interfejsu użytkownika. Różnią się one podejściem do projektowania UI w środowisku wirtualnym i ich celem nie było stworzenie lepszego i gorszego rozwiązania a porównanie podejścia konwencjalnego z rozwiązaniem autorskim, zaprojektowanym w oparciu o pozyskane wytyczne projektowe.
+
+Wariant A opiera się w głównej mierze na powszechnie stosowanych powszechnie rozwiązaniach w grach VR. Charakteryzuje się zastosowaniem  ekranowych paneli UI obracających sie zgodnie z kierunkiem wzorku odbiorcy obsługiwany najczęściej za pomocą wskaźnika laserowego. Lokomocja odbywała sie w nich sposób ciągły z płynnym obrotem. Interfejs funkcjonuje w nich głównie jako jako warstwa ekranowa, niezależna od obiektów świata gry. Informacje prezentowane są w postaci półprzezroczystych paneli wyświetlanych przed użytkownikiem, które w niewielkim stopniu mogą przysłaniać pole widzenia i pełnią rolę głównego nośnika informacji. Menu główne oraz ekrany pomocnicze mają formę dużych paneli ekranowych, których obsługa odbywa się za pomocą laserowego wskaźnika a w trakcie interakcji z obiektami świata mogą pojawiać się proste okna kontekstowe.
+
+Wariant B jest autorskim podejściem i został zaimplementowany jako implementacja wniosków uzyskanych z wcześniejszych rozdziałów badawczych. Interfejs jest zintegrowany z ciałem użytkownika oraz elementami wirtualnego środowiska, przyjmując formę fizycznie istniejących elementów jak dziennik czy zegarek na nadgarstku. Dodatkowe informacje i wskazówki prezentowane bezpośrednio w przestrzeni wirtualnej, m.in. na ścianach, elementach otoczenia. Mogą to być również fizyczne notatki umieszczone obok obiektów interaktywnych, które sugerują sposób użycia przedmiotów lub kierunek dalszego działania.
+Interakcja bazuje na bezpośrednim dotyku i manipulacji obiektami a każdej akcji towarzyszy zsynchronizowane z nią informacje zwrotne w postaci wizualnej, dźwiękowej i haptycznej. 
+
+
+\subsection{Projekt scenariuszy zadań testowych}
+
+W ramach projektowanego środowiska testowego przygotowano 4 zadania interakcyjne, które będą realizowane przez użytkownika w określonej z góry kolejności. Ich celem jest obserwacja sposobu korzystania z interfejsu i mechanizmów interakcji w wirtualnym środowisku. Każdy ze scenariuszy  został zaprojektowany w taki sposób aby w danym zadaniu badany był tylko jeden obszar a pozostałe elemnety pozostawały niezmienne, pełniły role tła i zapewniały kontekst użycia. Oznacza to że róznice miedzy wariantami A i B  dotycza tylko jednego aspektu, np. w przypadku zadania 1 jest to interfejs użytkownika, mechanizmy lokomocji i feedback pozostają bez zmian. takie podejście miało ograniczyć wpływ innych obszarów na aktualnie badany i zapewnić bardziej jednolite porównanie.
+
+\subsubsection{Zadanie 1: Sortowanie obiektów}
+
+Pierwsze zdanie miało bezpośrednio ocenić interfejs użytkownika i jego wpływ na czas realizacji zadania, radzenie sobie z odnajdywaniem potrzebnych informacji oraz wrażenie obecności. Zadanie rozpoczyna się od momentu wyjścia z windy. Po przejściu kilku kroków przed użytkownikiem, w zależności od wariantu, pojawia się interfejs panelowy lub interfejs umieszczony w fizycznym obiekcie. Otrzymuje informacje o celu zadania, po czym rozpoczyna eksploracje pomieszczenia, w którym się znajduje, w poszukiwaniu trzech obiektów rozmieszczonych w różnych miejscach w pokoju. Pierwszy z obiektów jest łatwo widoczny, drugi ukryty w szafie, zaś trzeci jest umieszczony na podwyższeniu i wymaga interakcji z dźwignia, aby opuścić półkę niżej. Zadanie pozwala zaobserwować, w jaki sposób użytkownik korzysta z interfejsu, czy potrzebuje powrotu do dostępnych elementów informacyjnych oraz jak szybko jest w stanie zrozumieć i wykonać zadanie. W obu wariantach, obiekty są chwytane bezpośrednio przez wirtualne ręce użytkownika i przenoszone na odpowiednią platformę. Główne różnice między oboma wariantami wynika ze sposobu prezentowania informacji o postępie w wykonywanym działaniu a samo zadanie umożliwia obserwacje jak interfejs prowadzi użytkownika do celu, wspiera ekploracje i podstawową interakcje z obiektami.
+
+\subsubsection{Zadanie 2: Zapamiętanie i odtworzenie sekwencji}
+Głównym celem zadania drugiego była ocena intensywności informacji zwrotnej, a nie samego sposobu jej prezentowania. Projektując uwzględniono naturalne ograniczenia pamięciowe użytkowników. W obu wariantach interfejs był wpudowany w środowisko wirtualne a poruszanie się odbywało się w ten sam sposób. Zadanie również nie uległo żadnym zmianom a jedyną różnicą miedzy nimi była ilość wykorzystywanych kanałów feedbacku oraz ich intensywność. W wariancie A informacja zwrotna ograniczona jest do pojedynczego, niskointensywnego kanału dzwiękowego, natomiast w wariancie B zastosowano informację zwrotną wielokanałową, łączącą bodźce wizualne, dźwiękowe oraz haptyczne. Pozwalało to na ocene wpływu niskiej i wysokiej intensywności feedbacku na przebieg zadania. 
+
+\subsubsection{Zadanie 3: Lokomocja po platformach}
+Zadanie trzecie
+
+\subsubsection{Zadanie 4: Aktywacja światła i wspinaczka}
 
 
 \section{Implementacja}
@@ -59,23 +87,62 @@ Istotną formą interakcji jest lokomocja, czyli poruszanie się wykorzystując 
 
 Zintegrowana z szablonem projektu paczka integracyjna do wirtualnej rzeczywistości zawiera odpowiedniego rodzaju komponenty, które umożliwiają nadanie odpowiednich funkcjonalności surowym obiektom na scenie. Całość jest zintegrowana z ekosystemem wirtualnej rzeczywistości oraz wspiera dodatkowe rzeczy takie jak niestandardowe gesty joysticków. Przy implementacji nowych systemów istotne jest opieranie się na gotowych rozwiązaniach, które można w dowolny sposób rozszerzać i modyfikować.
 
-Umożliwia to szybsze wdrożenie się w wirtualną rzeczywistość i skupienie się na samym implementowaniu rozgrywki i jej niezależnych systemów zamiast przygotowywać surową integrację z modułem VR. Sprawia to, że próg wejścia jest znacznie mniejszy.
+Umożliwia to szybsze wdrożenie się w wirtualną rzeczywistość i skupienie się na samym implementowaniu rozgrywki i jej niezależnych systemów zamiast tracić czas na przygotowywanie dokładnej integracji z modułem VR. Sprawia to, że próg wejścia jest znacznie mniejszy.
 
-XR Grab Interactable
-XR Knob
+Użyty szablon korzysta z paczki \textit{OpenXR Plugin}, która oferuje podstawowe komponenty wymagane do konfiguracji wirtualnych dłoni, podstawowych interakcji z obiektami oraz przygotowany obiekt awatara z możliwością płynnego ruchu i teleportacji. Wszystkie szczegółowe interakcje, takie jak na przykład dźwignia muszą zostać zaimplementowane własnoręcznie bazując na głównym komponencie \textit{XRGrabInteractable}.
 
+Istnieją również alternatywne paczki do obsługi wirtualnej rzeczywistości, które oferują szerszy pakiet użytecznych funkcji i zasobów. Niektóre są płatne, a inne przestały być już rozwijane, dlatego do celów badawczych wykorzystano podstawowy pakiet.
+
+OPISAĆ:
+Implementacja dźwigni
+Implementacja otwieranych drzwi
+Implementacja przycisków
 
 \subsection{Architektura i implementacja interfejsu użytkownika}
 
-- rolę UI w systemie,
-- podział na:
-   - elementy 2D,
-   - elementy 3D / diegetyczne,
-   
-- powiązanie UI z interakcją,
-- różnice implementacyjne między wariantami A i B (bez oceniania).
+W przypadku wirtualnej rzeczywistości istotne jest pogrupowanie konkretnych elementów interfejsu na podstawie wybranego systemu integracji. Dlatego też obiekt będący wskazówką dla gracza powinien być zarówno utworzony w formie interaktywnej kartki papieru z tekstem oraz na sztywno pleciony w wyświetlany hologram obracający się wokół gracza.
 
-\subsection{System podsumowania zadan i przechodzenia miedzy etapami}
+Drugi sposób to standardowe podejście do tworzenia interfejsu użytkownika znanego ze wszystkich gier. Wyświetla na dwuwymiarowej płaszczyznie wszystkie interaktywne kontrolki oraz informacje. Sam wygląd takiego interfejsu ewoluował wielokrotnie. Od prostych informacji w konsoli, aż po szczegółowe HUDy zasłaniające większość ekranu gry aż po minimalistyczne i często wyłączane przy dłuższym czasie nieaktywności latające fragmenty.
+
+W przypadku VR bazując na przykładowej scenie interakcję z takimi obiektami można obsłużyć przy pomocy specjalnych laserów wskazujących pełniących funkcję kursora. Umożliwia to w prosty i intuicyjny sposób obsługiwać wszystkie kontrolki tak jakbyśmy wskazywali laserem na tablicy interaktywnej.
+
+Wymagane kilka rzeczy:
+- Canvas UI
+- Tracked Device Graphic Raycaster
+- XR General Grab Transformer
+- LazyFollow
+
+
+Ograniczanie się jedynie do prostych hologramów 2D strasznie zmniejsza potencjał wirtualnej rzeczywistości, więc drugim podejściem do tworzenia interfejsu użytkownika jest podpięcie się pod to, co wirtualna rzeczywistość robi dobrze...
+
+Wymagane kilka rzeczy:
+- Fizyczny mesh
+- XR Grab Interactable (interakcja)
+- XR Grab Transformer (skalowanie)
+- Własny skrypt umożliwiający podpięcie się pod gesty
+
+
+Idealnym podejściem do tematu jest wykorzystanie korzyści z zastosowania obu systemów, aby zmaksymalizować ich zalety i użyć 2D tam, gdzie imersja jest mniej istotna oraz 3D tam, gdzie mnogość informacji w 2D byłaby odpychająca, a zastosowanie zwiększy imersję.
+
+Dlatego w przypadku tworzenia projektu badawczego postanowiono zastosować trzy scenariusze testowe dla każdego przypadku, pełne wykorzystanie interfejsu 2D oraz osobno 3D. A jako trzeci wybór zrobić mix, który według badań okazało się złotym środkiem.
+
+
+IMPLEMENTACJA 2D
+IMPLEMENTACJA 3D
+PRZYKŁADOWY PODZIAŁ DANEGO OBIEKTU NA 2D I 3D
+
+\subsection{System zadań badawczych i przechodzenie miedzy etapami}
+
+Aby odpowiednio zbadać każdy testowy scenariusz oraz wyciągnąć odpowiednie wnioski. należy umożliwić szczegółowe rejestrowanie danych z wykonanych przez testerów symulacji. Musi być dokładny moment rozpoczęcia sekwencji, liczenie czasu oraz warunki końcowe, które pozwolą uznać daną sekwencję za wykonaną pozytywnie lub negatywnie.
+
+
+W zaprojektowanym środowisku VR przechodzenie pomiędzy kolejnymi etapami gry zostało oparte na jednolitym systemie wykorzystującym motyw windy. Mechanizm ten spełnia kilka ról jednocześnie: stanowi element świata przedstawionego, umożliwia przejście między etapami, odpowiada za ładowanie kolejnych scen oraz pełni funkcję ekranu podsumowującego wykonane zadania. Takie podejście pozwoliło połączyć wymagania techniczne z założeniami projektowymi dotyczącymi immersji oraz przejrzystości interfejsu.
+
+Zastosowanie windy jako elementu przejściowego zostało podyktowane kilkoma względami projektowymi. Przede wszystkim rozwiązanie to ogranicza dezorientację użytkownika, która często pojawia się w środowiskach VR podczas nagłych zmian scen lub wyświetlania pełnoekranowych interfejsów. Dodatkowo zapewnia ciągłość doświadczenia, ponieważ użytkownik przez cały czas pozostaje w świecie gry i tworzy naturalny moment zatrzymania akcji, umożliwiający refleksję nad wykonanymi zadaniami.
+
+W porównaniu do standardowych ekranów podsumowania stosowanych w grach, rozwiązanie to jest lepiej dostosowane do środowiska VR, w którym oderwanie użytkownika od przestrzeni świata gry może negatywnie wpłynąć na immersję oraz komfort użytkowania.
+
+
 
 - koncepcja windy jako:
     - elementu świata,
