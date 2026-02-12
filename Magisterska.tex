@@ -1,6 +1,6 @@
 \documentclass[xodstep]{wnspt}
 
-\author   {XYZ}
+\author   {Natalia Praska-Dyla}
 \nralbumu {77071} 
 \kierunek {Informatyka}
 \specjalnosc {Tworzenie gier komputerowych}
@@ -18,6 +18,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{polski}
+\usepackage{csquotes}
 \usepackage{colortbl}
 \usepackage{hyperref}
 \usepackage{tikz}
@@ -30,10 +31,17 @@
 \usepackage{listingsutf8}
 \usepackage{beramono}
 \usepackage[section]{placeins}
-\usepackage{csquotes}
 \usepackage{comment}
 \usepackage{carlito} % Dodanie czcionki Carlito
-\usepackage[backend=biber,refsegment=section,defernumbers=true,]{biblatex}
+\usepackage[%
+backend=biber,refsegment=section,
+defernumbers=true,
+]{biblatex}
+
+%\usepackage{fontspec}
+%\setmainfont{Carlito}
+
+\addbibresource{literatura.bib}
 
 
 \lstset{ %
@@ -106,16 +114,32 @@ Kolejne rozdziały opisują proces projektowania i implementacji dwóch wariant�
 \input{chapters/chapter2}
 \input{chapters/chapter3}
 \input{chapters/chapter4}
-\input{chapters/chapter5}
-\input{chapters/chapter6}
+%\input{chapters/chapter5}
+%\input{chapters/chapter6}
 
 \summary
-Założony cel tej pracy, aby 
+Celem mojej pracy było zapoznanie czytelnika z komponentami JavaBeans i ich zastosowaniem. 
+Uważam, że udało mi się zrealizować ten cel. Starałem się opisać zarówno ...
+
+% załączniki (opcjonalnie):
+\appendix
+\chapter{Tytuł załącznika jeden}
+Treść załącznika jeden.
+
+\chapter{Tytuł załącznika dwa}
+Treść załącznika dwa.
+
+%\bibliographystyle{plain}
+%\bibliography{literatura}
+
+\printbibliography[type=book,title={Bibliografia - książki}]
+\printbibliography[type=misc,title={Bibliografia - strony internetowe}]
 
 
-\bibliographystyle{plain}
-\printbibliography[type=book,title={Books only}]
+% spis tabel (jeżeli jest potrzebny):
+\listoftables
 
+% spis rysunków (jeżeli jest potrzebny):
 \listoffigures
 
 % spis listingów (jeżeli jest potrzebny):

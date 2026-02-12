@@ -1,13 +1,13 @@
-SRC = inzynierska.tex
-AUX = inzynierska.aux
+SRC = magisterska.tex
+AUX = magisterska
 
-inzynierska.pdf: $(SRC)
+magisterska.pdf: $(SRC)
 	pdflatex $<
 	pdflatex $<
-	bibtex $(AUX)
+	biber $(AUX)
 	pdflatex $<
 	pdflatex $<
 
 clean:
-	rm -f *~ *.{pdf,log,lof,lol,lot,aux,blg,bbl,toc,nav,out,snm}
+	rm -f *~ *.{pdf,log,lof,lol,lot,aux,blg,bbl,bcf,toc,nav,out,snm,xml}
 
