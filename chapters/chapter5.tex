@@ -3,20 +3,19 @@
 \section{Projektowanie rozwiązań}
 \subsection{ Założenia koncepcyjne i wybór gatunku gry}
 
- Projektowany prototyp został zaplanowany jako środowisko testowe w formie gry VR typu puzzle/exploration. Jego głównym celem nie jest rozbudowana rozgrywka fabularna, tylko umożliwienie oceny i porównania rożnych podejść do projektowania interfejsu użytkownika i interakcji w VR.  Wybór tego gatunku był spowodowany możliwością bezproblemowego osadzenia zadań interakcyjnych w przestrzeni, bez konieczności stosowania skomplikowanych mechanik, które nie należą do badanego zakresu. Postannowiono również o wyłaczeniu obszaru związanego z mechaniką ekwipunku, ponieważ pomimo początkowych przypuszczeń na etapie badania eksperckiego wyniki badan nie wskazywały na to, że ten element stanowi dla użytkowników problem krytyczny.  
+ Projektowany prototyp został zaplanowany jako środowisko testowe w formie gry VR typu puzzle/exploration. Jego głównym celem nie jest rozbudowana rozgrywka fabularna, tylko umożliwienie oceny i porównania rożnych podejść do projektowania interfejsu użytkownika i interakcji w VR.  Wybór tego gatunku był spowodowany możliwością bezproblemowego osadzenia zadań interakcyjnych w przestrzeni, bez konieczności stosowania skomplikowanych mechanik, które nie należą do badanego zakresu. Postannowiono również o wyłączeniu obszaru związanego z mechaniką ekwipunku, ponieważ pomimo początkowych przypuszczeń na etapie heurystycznego badania eksperckiego wyniki badan nie wskazywały na to, że ten element stanowi dla użytkowników problem krytyczny. Decyzja o przeprowadzeniu eksperymentu wynikała z potrzeby konfrontacji wizji projektowej z rzeczywistym doświadczeniem użytkowników. Nawet niewielka grupa badanych może ujawnić krytyczne problemy interakcyjne, które pozostają niewidoczne na etapie projektowania i implementacji, co uzasadnia włączenie etapu empirycznego jako integralnej części procesu projektowego.\cite{Badania-graczy}
 
-Założeniem koncepcyjnym wykonywanego projektu było stworzenie środowiska w którym użytkownik wykonuje serie z góry określonych zadań wymagających wykorzystania takich elementów jak nawigacja czy manipulacja obiektami i podejmowania prostych decyzji. Taki charakter rozgrywki pozwolił na zmniejszenie wpływu zewnętrznych czynników takich jak presja czasowa czy rywalizacja. W projekcie nie zakładano możliwości poniesienia porażki ani kar za błędne odpowiedzi. Miało to pozwolić na skupienie się na sposobie obsługi iinterfejsu i interakcji niezależnie od poziomu doświadczenia. 
+Założeniem koncepcyjnym wykonywanego projektu było stworzenie środowiska w którym użytkownik wykonuje serie z góry określonych zadań wymagających wykorzystania takich elementów jak nawigacja czy manipulacja obiektami i podejmowania prostych decyzji. Taki charakter rozgrywki pozwolił na zmniejszenie wpływu zewnętrznych czynników takich jak presja czasowa czy rywalizacja. W projekcie nie zakładano możliwości poniesienia porażki ani kar za błędne odpowiedzi. Miało to pozwolić na skupienie się na sposobie obsługi interfejsu i interakcji niezależnie od poziomu doświadczenia. Takie podejście wymagało uwzględnienia w projektowaniu przystępności prototypu oraz poczucia własnej sprawczości których brak w przypadku osób niedoświadczonych może skutkować w odrzuceniu technologi VR.  \cite{Ewaluacja-UX}  
 
 
-\subsection{ Charakterystyka porównywanych wariantów interfejsu (Wariant A i B)}
+\subsection{ Charakterystyka porównywanych wariantów (Wariant A i B)}
 
 Na podstawie analizy heurystycznej oraz badania ankietowego zdecydowano się na implementacje dwóch odmiennych wariantów interfejsu użytkownika. Różnią się one podejściem do projektowania UI w środowisku wirtualnym i ich celem nie było stworzenie lepszego i gorszego rozwiązania a porównanie podejścia konwencjalnego z rozwiązaniem autorskim, zaprojektowanym w oparciu o pozyskane wytyczne projektowe.
 
 Wariant A opiera się w głównej mierze na powszechnie stosowanych powszechnie rozwiązaniach w grach VR. Charakteryzuje się zastosowaniem  ekranowych paneli UI obracających sie zgodnie z kierunkiem wzorku odbiorcy obsługiwany najczęściej za pomocą wskaźnika laserowego. Lokomocja odbywała sie w nich sposób ciągły z płynnym obrotem. Interfejs funkcjonuje w nich głównie jako jako warstwa ekranowa, niezależna od obiektów świata gry. Informacje prezentowane są w postaci półprzezroczystych paneli wyświetlanych przed użytkownikiem, które w niewielkim stopniu mogą przysłaniać pole widzenia i pełnią rolę głównego nośnika informacji. Menu główne oraz ekrany pomocnicze mają formę dużych paneli ekranowych, których obsługa odbywa się za pomocą laserowego wskaźnika a w trakcie interakcji z obiektami świata mogą pojawiać się proste okna kontekstowe.
 
 Wariant B jest autorskim podejściem i został zaimplementowany jako implementacja wniosków uzyskanych z wcześniejszych rozdziałów badawczych. Interfejs jest zintegrowany z ciałem użytkownika oraz elementami wirtualnego środowiska, przyjmując formę fizycznie istniejących elementów jak dziennik czy zegarek na nadgarstku. Dodatkowe informacje i wskazówki prezentowane bezpośrednio w przestrzeni wirtualnej, m.in. na ścianach, elementach otoczenia. Mogą to być również fizyczne notatki umieszczone obok obiektów interaktywnych, które sugerują sposób użycia przedmiotów lub kierunek dalszego działania.
-Interakcja bazuje na bezpośrednim dotyku i manipulacji obiektami a każdej akcji towarzyszy zsynchronizowane z nią informacje zwrotne w postaci wizualnej, dźwiękowej i haptycznej. 
-
+Interakcja bazuje na bezpośrednim dotyku i manipulacji obiektami. Każdej akcji towarzyszy zsynchronizowane z nią wielozmysłowe informacje zwrotne które istotnie wzmacnia realizm interakcji i poczucie obecności w VR. Wynika to z analizy heurystycznej oraz z wniosków przedstawionych w literaturze \cite{Prototypy-XR} \cite{Projektowanie-VR}
 
 \subsection{Projekt scenariuszy zadań testowych}
 
@@ -85,85 +84,118 @@ Istotną formą interakcji jest lokomocja, czyli poruszanie się wykorzystując 
 
 \subsection{Implementacja interaktywnych elementów i technik interakcji}
 
-Zintegrowana z szablonem projektu paczka integracyjna do wirtualnej rzeczywistości zawiera odpowiedniego rodzaju komponenty, które umożliwiają nadanie odpowiednich funkcjonalności surowym obiektom na scenie. Całość jest zintegrowana z ekosystemem wirtualnej rzeczywistości oraz wspiera dodatkowe rzeczy takie jak niestandardowe gesty joysticków. Przy implementacji nowych systemów istotne jest opieranie się na gotowych rozwiązaniach, które można w dowolny sposób rozszerzać i modyfikować.
+Zintegrowana z szablonem projektu paczka integracyjna do wirtualnej rzeczywistości zawiera podstawowe komponenty, które umożliwiają nadanie odpowiednich funkcjonalności surowym obiektom na scenie. Całość jest zintegrowana z ekosystemem wirtualnej rzeczywistości oraz wspiera dodatkowe funkcjonalności, takie jak niestandardowe gesty joysticków. Przy implementacji nowych systemów istotne jest opieranie się na gotowych rozwiązaniach, które można w dowolny sposób rozszerzać i modyfikować.
 
-Umożliwia to szybsze wdrożenie się w wirtualną rzeczywistość i skupienie się na samym implementowaniu rozgrywki i jej niezależnych systemów zamiast tracić czas na przygotowywanie dokładnej integracji z modułem VR. Sprawia to, że próg wejścia jest znacznie mniejszy.
+Umożliwia to szybsze wdrożenie się w wirtualną rzeczywistość i skupienie się na implementacji rozgrywki zamiast tracić czas na przygotowywanie dokładnej integracji z modułem VR. Sprawia to, że próg wejścia w tę technologię jest znacznie niższy.
 
-Użyty szablon korzysta z paczki \textit{OpenXR Plugin}, która oferuje podstawowe komponenty wymagane do konfiguracji wirtualnych dłoni, podstawowych interakcji z obiektami oraz przygotowany obiekt awatara z możliwością płynnego ruchu i teleportacji. Wszystkie szczegółowe interakcje, takie jak na przykład dźwignia muszą zostać zaimplementowane własnoręcznie bazując na głównym komponencie \textit{XRGrabInteractable}.
+Istnieją również alternatywne paczki do obsługi wirtualnej rzeczywistości, które oferują szerszy pakiet użytecznych funkcji i zasobów. Użyta w projekcie paczka \textit{AutoHand} wspiera automatyczne układanie wirtualnej dłoni na obiektach na podstawie kolizji z interaktywnym obiektem bez ręcznego definiowania pozycji palców, co znacząco przyśpiesza pracę uzyskując bardzo dobry efekt. Dodatkowo autor paczki przygotował rozbudowane środowisko testowe z dużą bazą interaktywnych obiektów, które samo w sobie jest już bardzo dobrym scenariuszem do nauki wirtualnej rzeczywistości i jego pełnych możliwości (rysunek \ref{autohand_example}).
 
-Istnieją również alternatywne paczki do obsługi wirtualnej rzeczywistości, które oferują szerszy pakiet użytecznych funkcji i zasobów. Niektóre są płatne, a inne przestały być już rozwijane, dlatego do celów badawczych wykorzystano podstawowy pakiet.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/chapter5/AutoHand.PNG}
+    \caption{Scena symulacyjna od twórcy paczki AutoHand}
+    \label{autohand_example}
+\end{figure}
 
-OPISAĆ:
-Implementacja dźwigni
-Implementacja otwieranych drzwi
-Implementacja przycisków
+\subsection{Architektura interfejsu użytkownika}
 
-\subsection{Architektura i implementacja interfejsu użytkownika}
-Wymaga poprwaki nieaktualne
-W przypadku wirtualnej rzeczywistości istotne jest pogrupowanie konkretnych elementów interfejsu na podstawie wybranego systemu integracji. Dlatego też obiekt będący wskazówką dla gracza powinien być zarówno utworzony w formie interaktywnej kartki papieru z tekstem oraz na sztywno pleciony w wyświetlany hologram obracający się wokół gracza.
+W środowiskach VR interfejs użytkownika nie jest wyłącznie warstwą graficzną, lecz częścią przestrzennej interakcji. W odróżnieniu od klasycznych aplikacji ekranowych, elementy UI mogą być umieszczone bezpośrednie w świecie, tradycyjnie przypięte do użytkownika, zmaterializowane jako obiekty diegetyczne lub realizowane jako klasyczne panele 2D renderowane w przestrzeni. Literatura dotycząca projektowania interakcji immersyjnych podkreśla, że dobór technik UI powinien wynikać z rodzaju zadania, kosztów poznawczych oraz ograniczeń percepcyjnych (np. czytelności, komfortu i obciążenia uwagi).\cite{Projektowanie-VR}
 
-Drugi sposób to standardowe podejście do tworzenia interfejsu użytkownika znanego ze wszystkich gier. Wyświetla na dwuwymiarowej płaszczyznie wszystkie interaktywne kontrolki oraz informacje. Sam wygląd takiego interfejsu ewoluował wielokrotnie. Od prostych informacji w konsoli, aż po szczegółowe HUDy zasłaniające większość ekranu gry aż po minimalistyczne i często wyłączane przy dłuższym czasie nieaktywności latające fragmenty.
+Z perspektywy architektury systemu kluczowe jest rozdzielenie \textit{treści i logiki} od \textit{warstwy prezentacji}. Ten sam komunikat lub wskazówka dla gracza (np. „podpowiedź do rozwiązania łamigłówki”) może zostać przedstawiony w dwóch równoległych implementacjach: jako element diegetyczny w świecie (np. kartka z tekstem lub ekran laptopa) oraz jako klasyczny panel 2D (np. hologram/okno w przestrzeni). Taki podział umożliwia porównanie wpływu sposobu prezentacji na użyteczność, przy zachowaniu tej samej zawartości i celu zadaniowego.
 
-W przypadku VR bazując na przykładowej scenie interakcję z takimi obiektami można obsłużyć przy pomocy specjalnych laserów wskazujących pełniących funkcję kursora. Umożliwia to w prosty i intuicyjny sposób obsługiwać wszystkie kontrolki tak jakbyśmy wskazywali laserem na tablicy interaktywnej.
+\subsubsection{Interfejs dwuwymiarowy (\textit{world-space UI})}
+Interfejs 2D w wirtualnej rzeczywistości realizowany jest najczęściej jako panel umieszczony w przestrzeni trójwymiarowej sceny (\textit{world-space canvas}), a nie bezpośrednio na soczewkach gogli. W silniku Unity odpowiada temu komponent \texttt{Canvas} z trybem renderowania \textit{World Space}, który pozwala osadzić płaską powierzchnię z kontrolkami w dowolnym miejscu sceny.
 
-Wymagane kilka rzeczy:
-- Canvas UI
-- Tracked Device Graphic Raycaster
-- XR General Grab Transformer
-- LazyFollow
+Interakcja z elementami takiego panelu odbywa się zazwyczaj za pomocą promienia wskazującego (\textit{ray pointer}) emitowanego z kontrolera ruchowego, co stanowi analogię do wskazywania laserem na tablicy interaktywnej. Użytkownik kieruje promień na wybrany element interfejsu i wchodzi w interakcję poprzez przyciski, co zapewnia intuicyjny i precyzyjny sposób obsługi kontrolek znany z konwencjonalnych interfejsów graficznych (\cite{LaViola2000}).
 
+Interfejs 2D opiera się na wykorzystaniu komponentu \texttt{canvas} w trybie \textit{World Space}. W odróżnieniu od trybu \textit{Screen Space}, w którym elementy UI są renderowane jako nakładka na obraz kamery, tryb \textit{World Space} pozwala umieścić płaszczyznę interfejsu jako obiekt w trójwymiarowej scenie, nadając jej pozycję, rotację i skalę niezależne od kamery (rysunek \ref{ui_2d_example}). Dzięki temu panel z kontrolkami może być osadzony w konkretnym miejscu świata gry lub dynamicznie podążać za użytkownikiem.
 
-Ograniczanie się jedynie do prostych hologramów 2D strasznie zmniejsza potencjał wirtualnej rzeczywistości, więc drugim podejściem do tworzenia interfejsu użytkownika jest podpięcie się pod to, co wirtualna rzeczywistość robi dobrze...
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/chapter5/ui_2d_example.png}
+    \caption{Przykład interfejsu 2D. Latający canvas w przestrzeni world-space}
+    \label{ui_2d_example}
+\end{figure}
 
-Wymagane kilka rzeczy:
-- Fizyczny mesh
-- XR Grab Interactable (interakcja)
-- XR Grab Transformer (skalowanie)
-- Własny skrypt umożliwiający podpięcie się pod gesty
+Aby zapewnić czytelność i wygodę użytkowania, panel może być skonfigurowany tak, aby podążał za orientacją głowy użytkownika z lekkim opóźnieniem (skrypt \textit{lazy follow} na listingu \ref{lazy_follow}). Mechanizm ten, stosowany między innymi w grach \textit{Beat Saber} czy \textit{Boneworks}, zapobiega sytuacji, w której użytkownik musiałby się odpowiednio ustawić, aby móc zobaczyć wszystkie informacje, a jednocześnie unika nieimersyjnego uczucia sztywnego przytwierdzenia do pola widzenia, co mogłoby powodować efekt choroby lokomocyjnej \cite{LaViola2000}.
 
+\begin{center}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,label={lazy_follow}, caption=Skrypt opóźnionego podążania panelu UI za kierunkiem wzroku gracza., firstline=5, lastline=26]{listings/LazyFollow.cs}
+\end{center}
 
-Idealnym podejściem do tematu jest wykorzystanie korzyści z zastosowania obu systemów, aby zmaksymalizować ich zalety i użyć 2D tam, gdzie imersja jest mniej istotna oraz 3D tam, gdzie mnogość informacji w 2D byłaby odpychająca, a zastosowanie zwiększy imersję.
+\subsubsection{Interfejs trójwymiarowy (diegetyczny)}
 
-Dlatego w przypadku tworzenia projektu badawczego postanowiono zastosować d scenariusze testowe dla każdego przypadku, pełne wykorzystanie interfejsu 2D oraz osobno 3D. A jako trzeci wybór zrobić mix, który według badań okazało się złotym środkiem.
+Drugie podejście polega na osadzeniu informacji bezpośrednio w obiektach świata gry, co zwiększa immersję i spójność narracyjną. Przykładem takiego interfejsu jest kartka papieru zawierająca wskazówki dla gracza lub wplecioną fabułę rozgrywki, interaktywna książka, której strony można przewracać, czy laptop umieszczony w scenie, na ekranie którego wyświetlane są dane (\cite{Fagerholt2009}). Podejście to jest charakterystyczne dla produkcji stawiających na realizm interakcji, takich jak \textit{Half-Life: Alyx} firmy \textit{Valve} lub \textit{Profundum} stworzonej przez \textit{Black Mouse}, gdzie większość informacji przekazywana jest poprzez interaktywne obiekty fizycznie obecne w otoczeniu gracza.
 
+Interfejs diegetyczny wymaga od projektanta większego nakładu pracy, ponieważ każdy element informacyjny musi zostać zintegrowany z geometrią i logiką sceny. Wiąże się to z koniecznością opracowania wiarygodnych modeli 3D, animacji oraz dedykowanych mechanizmów interakcji (na przykład chwytanie, obracanie, przybliżanie obiektów). W zamian użytkownik otrzymuje doświadczenie, w którym granica między interfejsem a światem gry ulega zatarciu, co jest jednym z głównych celów projektowania w VR (\cite{Projektowanie-VR,Interfejsy-3D}).
 
-IMPLEMENTACJA 2D
-IMPLEMENTACJA 3D
-PRZYKŁADOWY PODZIAŁ DANEGO OBIEKTU NA 2D I 3D
+Najprostszą formą interfejsu diegetycznego jest umieszczenie na scenie modelu urządzenia wyposażonego w ekran, na przykład komputera. Ekran takiego obiektu stanowi idealną bazę pod komponent \texttt{Canvas} w trybie \textit{World Space} dopasowany do ekranu urządzenia. Renderowanie elementów UI odbywa się identycznie jak w przypadku interfejsu 2D, jednak kontekst przestrzenny (fizyczna obecność urządzenia, konieczność podejścia do niego) nadaje interakcji charakter diegetyczny. Interakcja może odbywać się zarówno za pomocą promienia wskazującego z~dystansu, jak i poprzez bezpośrednie wskazywanie wirtualnym palcem.
+
+Najbardziej złożoną formą interfejsu diegetycznego jest obiekt wymagający fizycznej manipulacji. Dobrym przykładem jest książka, której kartki użytkownik może chwytać i przewracać, co zostało przedstawione w grze \textit{Profundum} na rysunku \ref{ui_3d_example}. Implementacja takiego elementu obejmuje kilka warstw:
+\begin{itemize}
+    \item \textbf{Geometria i animacja} — każda strona stanowi osobny mesh z dedykowanym szkieletem animacji (\textit{rig}) lub jest kontrolowana proceduralnie (na przykład poprzez \textit{blend shapes} odwzorowujące zginanie kartki). Przejście między stronami może być wyzwalane gestem chwytania i przeciągania.
+    \item \textbf{Treść stron} — zawartość poszczególnych stron może być realizowana jako \textit{Render Texture}, jeśli wymagana jest dynamiczna aktualizacja lub jako zestaw przygotowanych tekstur przypisanych do materiałów kolejnych stron, gdy treść jest statyczna.
+    \item \textbf{Logika nawigacji} — skrypt zarządzający stanem książki śledzi aktualnie otwartą stronę, obsługuje animację przewracania oraz aktualizuje stan w zależności od bieżącej strony.
+\end{itemize}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/chapter5/ui_3d_example.png}
+    \caption{Przykład interfejsu diegetycznego w formie interaktywnej książki w grze \textit{Profundum}}
+    \label{ui_3d_example}
+\end{figure}
+
+Tego rodzaju interfejs wymaga znacznie większego nakładu implementacyjnego niż zwykły panel 2D, jednak oferuje wysoki poziom immersji i jest spójny z paradygmatem naturalnej interakcji, w którym użytkownik manipuluje obiektami w sposób analogiczny do świata rzeczywistego \cite{Interfejsy-3D}.
+
+\subsubsection{Podejście hybrydowe}
+
+W praktyce projektowej najkorzystniejsze rezultaty przynosi połączenie obu paradygmatów. Interfejs 2D sprawdza się tam, gdzie kluczowa jest szybkość odczytu informacji i precyzja obsługi kontrolek, na przykład w menu ustawień, listach wyboru czy panelach statystyk. Interfejs 3D jest natomiast preferowany w sytuacjach, w których immersja i zaangażowanie użytkownika mają priorytet, a nadmiar płaskich elementów mógłby zaburzać poczucie obecności w wirtualnym świecie \cite{Interfejsy-3D}.
+
+Badania nad użytecznością interfejsów w VR potwierdzają, że podejście hybrydowe, dobierające formę prezentacji do kontekstu i złożoności przekazywanej informacji, pozwala uzyskać lepszą równowagę między czytelnością a immersją niż zastosowanie wyłącznie jednego z paradygmatów \cite{Dachselt2017,Projektowanie-VR}. Przykład wykresów opartych na obu podejściach przedstawiony został na rysunku \ref{ui_mix_example}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/chapter5/ui_mix_example.png}
+    \caption{Przykład wykresów 2D i 3D}
+    \label{ui_mix_example}
+\end{figure}
+
+W ramach niniejszego projektu badawczego opracowano dwa scenariusze testowe: pierwszy wykorzystuje wyłącznie interfejs 2D, natomiast drugi opiera się głównie na elementach diegetycznego interfejsu 3D. Oba scenariusze realizowane są na identycznie zaprojektowanym poziomie i obejmują ten sam zestaw zadań, co pozwala na bezpośrednie porównanie wpływu formy interfejsu na doświadczenia uczestników badania w kontrolowanych warunkach.
 
 \subsection{System zadań badawczych i przechodzenie miedzy etapami}
 
-Aby odpowiednio zbadać każdy testowy scenariusz oraz wyciągnąć odpowiednie wnioski. należy umożliwić szczegółowe rejestrowanie danych z wykonanych przez testerów symulacji. Musi być dokładny moment rozpoczęcia sekwencji, liczenie czasu oraz warunki końcowe, które pozwolą uznać daną sekwencję za wykonaną pozytywnie lub negatywnie.
+Rzetelne zbadanie każdego scenariusza testowego oraz wyciągnięcie trafnych wniosków wymaga szczegółowego rejestrowania danych z przeprowadzonych symulacji. System pomiarowy musi odnotowywać dokładny moment rozpoczęcia każdej sekwencji, mierzyć czas jej trwania oraz weryfikować warunek końcowy pozwalający uznać daną sekwencję za ukończoną.
 
+W tym celu opracowano system zadań zintegrowany z obiektami przeszkód. Dopóki przypisane zadanie nie zostanie wykonane, blokada pozostaje zamknięta, uniemożliwiając użytkownikowi dostęp do dalszej części poziomu. Mechanizm ten wymusza sekwencyjne przechodzenie przez kolejne etapy i umożliwia precyzyjne obliczenie czasu potrzebnego na realizację każdego zadania.
 
-W zaprojektowanym środowisku VR przechodzenie pomiędzy kolejnymi etapami gry zostało oparte na jednolitym systemie wykorzystującym motyw windy. Mechanizm ten spełnia kilka ról jednocześnie: stanowi element świata przedstawionego, umożliwia przejście między etapami, odpowiada za ładowanie kolejnych scen oraz pełni funkcję ekranu podsumowującego wykonane zadania. Takie podejście pozwoliło połączyć wymagania techniczne z założeniami projektowymi dotyczącymi immersji oraz przejrzystości interfejsu.
+\subsubsection{Implementacja systemu sekwencyjnych zadań}
 
-Zastosowanie windy jako elementu przejściowego zostało podyktowane kilkoma względami projektowymi. Przede wszystkim rozwiązanie to ogranicza dezorientację użytkownika, która często pojawia się w środowiskach VR podczas nagłych zmian scen lub wyświetlania pełnoekranowych interfejsów. Dodatkowo zapewnia ciągłość doświadczenia, ponieważ użytkownik przez cały czas pozostaje w świecie gry i tworzy naturalny moment zatrzymania akcji, umożliwiający refleksję nad wykonanymi zadaniami.
+Klasa TaskSequence przedstawiona na listingu \ref{TaskSequence} opiera się na obiektach \textit{Checkpoint}. Zadanie nasłuchuje globalnych zdarzeń i oczekuje, aż wszystkie przypisane do niej punkty kontrolne zostaną zrealizowane, po czym zmienia swój stan na ukończony. Komponent \textit{Checkpoint} może zostać dołączony do dowolnego obiektu interaktywnego lub do wyznaczonej przestrzeni wyzwalającej się w momencie wejścia gracza w jej obszar. Prostota tej implementacji pozwala powiązać punkt kontrolny z różnorodnymi interakcjami VR, na przykład z odłożeniem przedmiotu we wskazane miejsce, trafieniem w cel czy wprowadzeniem odpowiedniej kombinacji przycisków.
 
-W porównaniu do standardowych ekranów podsumowania stosowanych w grach, rozwiązanie to jest lepiej dostosowane do środowiska VR, w którym oderwanie użytkownika od przestrzeni świata gry może negatywnie wpłynąć na immersję oraz komfort użytkowania.
+\begin{center}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,label={TaskSequence}, caption=Klasa \textit{TaskSequence} generująca statystyki na temat wykonanego zadania., firstline=21, lastline=48]{listings/TaskSequence.cs}
+\end{center}
 
+Wszystkie zadania są zarządzane przez globalny komponent \textit{SequenceManager}, który po załadowaniu scenariusza wyszukuje na scenie wszystkie obiekty klasy \textit{TaskSequence}, aktywuje domyślnie pierwszy w ustalonej kolejności, a następnie gromadzi informacje o wyniku każdego zadania. Po ukończeniu sekwencji utworzony obiekt klasy \textit{SequenceResult} jest przekazywany do komponentu \textit{Elevator}, który kieruje dane podsumowujące do graficznego interfejsu w celu wyświetlenia ich na ekranie podsumowania po zakończeniu poziomu.
 
+\begin{center}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,label={SequenceManager}, caption=Logika klasy \textit{SequenceManager} odpowiadająca za zarządzanie zadaniami., firstline=12, lastline=42]{listings/SequenceManager.cs}
+\end{center}
 
-- koncepcja windy jako:
-    - elementu świata,
-    - mechanizmu przejścia,
-    - system ładowania kolejnych scen,
-    - ekranu podsumowania
+\subsubsection{Mechanizm windy jako element przejściowy}
 
-- dlaczego to rozwiązanie:
-    - ogranicza dezorientację,
-    - wspiera ciągłość doświadczenia,
-    - jest lepsze niz standardowe ekrany podsumowania w grach
+W zaprojektowanym środowisku VR przechodzenie pomiędzy kolejnymi etapami gry zostało oparte na jednolitym systemie wykorzystującym motyw windy. Mechanizm ten spełnia kilka ról jednocześnie: stanowi element świata przedstawionego, umożliwia przejście między etapami, odpowiada za mechanizm ładowania kolejnych scen oraz pełni funkcję ekranu podsumowującego wykonane zadania. Takie podejście pozwoliło połączyć wymagania techniczne z założeniami projektowymi dotyczącymi immersji oraz przejrzystości interfejsu, co zostało opisane w książce Dizajn na co dzień \cite{Odczucie-gry}.
 
-- implementacja zadan i podsumowania:
-    - kiedy i jak użytkownik otrzymuje podsumowanie,
-    - jakie informacje są przekazywane,
-    - forma prezentacji (UI / świat),
-    - w jaki sposob zaimplementowano system
-    - w jaki sposob wdrazac system do istniejacych scen
+Zastosowanie windy jako elementu przejściowego było podyktowane kilkoma względami projektowymi. Przede wszystkim to rozwiązanie ogranicza dezorientację użytkownika, która w środowiskach VR często pojawia się podczas nagłych zmian scen lub wyświetlania pełnoekranowych interfejsów. Ponadto zapewnia ciągłość doświadczenia, ponieważ użytkownik przez cały czas pozostaje w obrębie świata gry. Winda tworzy również naturalny moment zatrzymania akcji, sprzyjający refleksji nad wykonanymi zadaniami. W porównaniu ze standardowymi ekranami podsumowania stosowanymi w grach, to rozwiązanie jest lepiej dostosowane do specyfiki VR, w której oderwanie użytkownika od trójwymiarowej przestrzeni świata gry może negatywnie wpływać na immersję i komfort użytkowania, a w skrajnych przypadkach przyczyniać się do wystąpienia objawów choroby symulatorowej.
 
+\subsubsection{Implementacja systemu windy}
 
-\subsection{Ograniczenia techniczne}
+System windy oparty jest na globalnym managerze przechowywanym w specjalnym stanie gry \textit{DontDestroyOnLoad}, dzięki czemu obiekt zostaje zachowany podczas przechodzenia między scenami. Gotowy prefabrykat zawiera również model wnętrza windy bez drzwi. Po załadowaniu nowego poziomu, instancja klasy \textit{Elevator} wyszukuje na scenie obiektu klasy \textit{ElevatorDock} o typie \textit{Start} i podłącza się do niego. \textit{ElevatorDock} jest komponentem osadzonym w osobnym prefabie, stanowiącym front windy z animowanymi drzwiami i to on zarządza logiką ich otwierania oraz zamykania. \textit{ElevatorManager} jedynie pozycjonuje się względem odpowiedniego doku.
 
+Analogiczny mechanizm działa przy zakończeniu poziomu. W momencie gdy użytkownik aktywuje przycisk otwarcia drzwi, obiekt \textit{Elevator} dołącza się do konkretnego \textit{ElevatorDock}, aby po otwarciu drzwi użytkownik zobaczył przed sobą wnętrze windy. Taki podział odpowiedzialności pozwala oddzielić windę od logiki konkretnego poziomu i nadać jej rolę globalnego zarządcy.
 
-%\subsection{Podsumowanie implementacji}
+\begin{center}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,label={ElevatorManager}, caption=Metoda w klasie \textit{ElevatorManager} ładująca asynchronicznie nowy poziom na korutynie., firstline=39, lastline=64]{listings/ElevatorManager.cs}
+\end{center}
+
+Ekran podsumowania generuje elementy interfejsu dynamicznie na podstawie liczby ukończonych zadań, wypełniając je danymi z obiektów typu \textit{SequenceResult}. Każdy taki obiekt zawiera nazwę zadania, czas realizacji poszczególnych etapów oraz liczbę popełnionych błędów. Zgromadzone w ten sposób dane służą do zebrania szczegółowych statystyk od grupy badawczej, umożliwiając identyfikację elementów, które sprawiają trudności niedoświadczonym użytkownikom i wymagają dalszych poprawek projektowych.
