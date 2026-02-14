@@ -51,23 +51,23 @@ public class TaskSequence : MonoBehaviour, IComparable<TaskSequence>
         if (indicatorPrefab == null || indicatorContainer == null || requiredCheckpoints == null)
             return;
         ClearIndicators();
-        int count = requiredCheckpoints.Count;
-        float spacing = count > 1 ? maxIndicatorWidth / (count - 1) : 0f;
+        var count = requiredCheckpoints.Count;
+        var spacing = count > 1 ? maxIndicatorWidth / (count - 1) : 0f;
         for (int i = 0; i < count; i++)
         {
-            var checkpointId = requiredCheckpoints[i];
-            var indicatorObj = Instantiate(indicatorPrefab, indicatorContainer);
-            var indicator = indicatorObj.GetComponent<CheckpointIndicator>();
-            if (indicator == null)
-            {
-                Debug.LogError($"Prefab nie ma komponentu CheckpointIndicator!");
-                Destroy(indicatorObj);
-                continue;
-            }
-            float offset = (i - (count - 1) / 2f) * spacing;
-            indicatorObj.transform.localPosition = new Vector3(0f, 0f, offset);
-            indicator.Initialize(checkpointId);
-            _indicators[checkpointId] = indicator;
+           var checkpointId = requiredCheckpoints[i];
+           var indicator = Instantiate(indicatorPrefab, indicatorContainer);
+           var component = indicator.GetComponent<CheckpointIndicator>();
+           if (component == null)
+           {
+               Debug.LogError($"Prefab nie ma komponentu CheckpointIndicator!");
+               Destroy(indicator);
+               continue;
+           }
+           float offset = (i - (count - 1) / 2f) * spacing;
+           indicator.transform.localPosition = new Vector3(0, 0, offset);
+           component.Initialize(checkpointId);
+           _indicators[checkpointId] = indicator;
         }
     }
     private void ClearIndicators()
