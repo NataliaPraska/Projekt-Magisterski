@@ -23,7 +23,7 @@ Zaprojektowane zadania nie miały określonego limitu czasu na zadanie aby umoż
 Zastosowanie tej metody miało na celu weryfikację, w jakim stopniu dany prototyp wspiera użytkownika w wykonywaniu założonych czynności \cite{Interakcja}. Dodatkową zaletą obserwacji była możliwość identyfikacji przyczyn zróżnicowanych wyników między poszczególnymi scenariuszami, co pozwoliło określić, które elementy środowiska sprzyjają efektywnej interakcji, a które wymagają dalszych modyfikacji i optymalizacji.
 
 \section{Wyniki i interpretacja}
-Czas wykonania zadań rejestrowano automatycznie przez system w skali sekundowej z dokładnością do dwóch miejsc po przecinku. Jest to podstawowa metryka użyteczności, opisująca czas potrzebny użytkownikowi do ukończenia zdefiniowanego zadania \cite{Pomiary}. Po badaniu dane były eksportowane do pliku .txt a obserwacje były zapisywane odręcznie przez autora pracy na tablecie podczas całego czasu trwania eksperymentu.
+Czas wykonania zadań rejestrowano automatycznie przez system w sekundach, z dokładnością do dwóch miejsc po przecinku. Jest to podstawowa metryka użyteczności, opisująca czas potrzebny użytkownikowi do ukończenia zdefiniowanego zadania \cite{Pomiary}. Po badaniu dane eksportowano do pliku \texttt{.txt}, natomiast obserwacje jakościowe zapisywano odręcznie na tablecie w trakcie trwania eksperymentu. W tabelach zestawiono czasy wykonania zadań oraz liczbę niepowodzeń. Jako niepowodzenie (N) w zadaniu 1 uznawano upuszczenie przenoszonego przedmiotu. W zadaniu 2 niepowodzenie stanowiło wprowadzenie błędnej sekwencji. W zadaniach 3 i 4 za niepowodzenie przyjmowano upadek użytkownika (np. spadnięcie z przeszkody lub platformy), skutkujący koniecznością cofnięcia się i ponownej próby.
 
 \begin{table}[htbp]
 \centering
@@ -50,16 +50,16 @@ Czas wykonania zadań rejestrowano automatycznie przez system w skali sekundowej
 \textbf{Czas [s]} & \textbf{$N$} &
 \textbf{scenariusza [s]} \\
 \hline
-U1 & Początkujący & 104,54 & 0 & 91,16  & 1 & 84,75  & 1 & 78,52  & 0 & 358,97 \\
-U2 & Początkujący & 96,85  & 0 & 89,23  & 0 & 118,09 & 4 & 106,98 & 1 & 411,15 \\
-U3 & Początkujący & 110,98 & 1 & 123,02 & 3 & 99,11  & 2 & 69,75  & 0 & 402,86 \\
+U1 & Początkujący & 104,54 & 0 & 98,16  & 2 & 84,75  & 1 & 78,52  & 0 & 365,97 \\
+U2 & Początkujący & 96,85  & 0 & 93,23  & 2 & 118,09 & 4 & 106,98 & 1 & 411,15 \\
+U3 & Początkujący & 110,98 & 1 & 123,02 & 4 & 99,11  & 2 & 69,75  & 0 & 402,86 \\
 U4 & Zaawansowany & 78,31  & 0 & 78,32  & 0 & 27,98  & 0 & 55,43  & 0 & 240,04 \\
 U5 & Zaawansowany & 73,73  & 0 & 65,25  & 0 & 37,77  & 0 & 59,01  & 0 & 235,76 \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z $N{>}0$ (Początkujący, $n{=}3$)}} &
-104,12 & 1/3 & 101,14 & 2/3 & 100,65 & 3/3 & 85,08 & 1/3 & 390,99 \\
+\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z niepowodzeniem (Początkujący)}} &
+104,12 & 1/3 & 104,80 & 3/3 & 100,65 & 3/3 & 85,08 & 1/3 & 390,99 \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z $N{>}0$ (Zaawansowani, $n{=}2$)}} &
+\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z niepowodzeniem (Zaawansowani)}} &
 76,02 & 0/2 & 71,79 & 0/2 & 32,88 & 0/2 & 57,22 & 0/2 & 237,90 \\
 \hline
 \end{tabular}%
@@ -67,11 +67,14 @@ U5 & Zaawansowany & 73,73  & 0 & 65,25  & 0 & 37,77  & 0 & 59,01  & 0 & 235,76 \
 
 \vspace{0.5em}
 \footnotesize
-\textbf{Uwaga:} $N$ oznacza liczbę niepowodzeń w zadaniu. W wierszach podsumowania podano średni czas oraz liczbę osób z $N{>}0$ w formacie $k/n$.
+\textbf{Uwaga:} $N$ oznacza liczbę niepowodzeń w zadaniu. W wierszach podsumowania podano średni czas oraz liczbę osób z co najmniej jednym niepowodzeniem w formacie $k/n$.
 \end{table}
 
+Na podstawie tabeli \ref{tab:scenariuszA_wyniki} można zauważyć wyraźny wpływ doświadczenia na przebieg wykonywania zadań. Osoby zaawansowane (U4–U5) zrealizowały scenariusz znacznie szybciej (średni czas ukończenia 237,90~s) niż uczestnicy początkujący (390,99~s). W grupie zaawansowanej nie odnotowano żadnych niepowodzeń, co wskazuje na większą pewność i płynność podczas wykonywania interakcji.
 
+W grupie początkującej największym wyzwaniem okazało się zadanie 3. Każdy z uczestników odnotował co najmniej jedno niepowodzenie (3/3), a u części badanych liczba niepowodzeń była wysoka (do 4), co przekładało się na dłuższy czas realizacji. Zadanie 2 generowało podobne trudności, natomiast zadania 1 i 4 okazały się bardziej przystępne.
 
+Różnice między grupami były najbardziej widoczne w zadaniu 3, gdzie średni czas w grupie początkującej wyniósł 100,65~s, a w grupie zaawansowanej 32,88~s (ponad trzykrotnie krócej). Dodatkowo wyniki grupy początkującej charakteryzowały się większym rozrzutem czasu ukończenia scenariusza (365,97--415,15~s) w porównaniu do grupy zaawansowanej (235,76--240,04~s).
 
 
 \begin{table}[htbp]
@@ -99,16 +102,16 @@ U5 & Zaawansowany & 73,73  & 0 & 65,25  & 0 & 37,77  & 0 & 59,01  & 0 & 235,76 \
 \textbf{Czas [s]} & \textbf{$N$} &
 \textbf{scenariusza [s]} \\
 \hline
-U6  & Początkujący & 148,26 & 2 & 88,99 & 1 & 74,55 & 1 & 139,97 & 1 & 451,77 \\
-U7  & Początkujący & 124,65 & 0 & 79,95 & 0 & 67,91 & 0 & 220,28 & 5 & 492,79 \\
-U8  & Początkujący & 131,93 & 1 & 82,91 & 0 & 68,37 & 0 & 90,91  & 0 & 374,12 \\
+U6  & Początkujący & 148,26 & 1 & 88,99 & 1 & 74,55 & 1 & 139,97 & 1 & 451,77 \\
+U7  & Początkujący & 124,65 & 0 & 79,95 & 1 & 67,91 & 0 & 220,28 & 3 & 492,79 \\
+U8  & Początkujący & 131,93 & 1 & 82,91 & 1 & 68,37 & 0 & 90,91  & 0 & 374,12 \\
 U9  & Zaawansowany & 87,17  & 0 & 52,02 & 0 & 20,93 & 0 & 54,21  & 0 & 214,33 \\
 U10 & Zaawansowany & 82,58  & 0 & 51,25 & 0 & 22,62 & 0 & 56,66  & 0 & 213,11 \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z niepowodzeniem (Początkujący, $n{=}3$)}} &
+\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z niepowodzeniem (Początkujący)}} &
 134,95 & 2/3 & 83,95 & 1/3 & 70,28 & 1/3 & 150,39 & 2/3 & 439,56 \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z niepowodzeniem (Zaawansowani, $n{=}2$)}} &
+\multicolumn{2}{|l|}{\textbf{Średnia czasu / osoby z niepowodzeniem (Zaawansowani)}} &
 84,88 & 0/2 & 51,64 & 0/2 & 21,78 & 0/2 & 55,44 & 0/2 & 213,72 \\
 \hline
 \end{tabular}%
@@ -116,20 +119,38 @@ U10 & Zaawansowany & 82,58  & 0 & 51,25 & 0 & 22,62 & 0 & 56,66  & 0 & 213,11 \\
 
 \vspace{0.5em}
 \footnotesize
-\textbf{Uwaga:} $N$ oznacza liczbę niepowodzeń w zadaniu (np. błędna sekwencja, upadek, konieczność powtórzenia fragmentu). W wierszach podsumowania podano średni czas oraz liczbę osób z co najmniej jednym niepowodzeniem w formacie $k/n$.
+\textbf{Uwaga:} $N$ oznacza liczbę niepowodzeń w zadaniu. W wierszach podsumowania podano średni czas oraz liczbę osób z co najmniej jednym niepowodzeniem w formacie $k/n$.
 \end{table}
 
 
-Wykonanie zadań (czas / próby / błędy):– [Wariant X] osiągnął lepsze wyniki w zadaniach: [Z1, Z2…], co wiązało się z [krótki powód: np. czytelniejsza wskazówka / mniejsze rozproszenie / szybsza identyfikacja celu].– [Wariant Y] sprawdzał się lepiej w [Z…], gdy [warunek].
+Na podstawie danych zestawionych w tabeli \ref{tab:scenariuszB_wyniki} można zaobserwować wyraźny wpływ poziomu doświadczenia użytkowników na przebieg realizacji zadań. Uczestnicy zaawansowani (U9–U10) ukończyli scenariusz istotnie szybciej (średni czas 213{,}72~s) niż uczestnicy początkujący (439{,}56~s). W grupie zaawansowanej nie odnotowano żadnych niepowodzeń w realizacji poszczególnych zadań (0/2), co wskazuje na stabilne, płynne i pewne wykonywanie interakcji.
 
-Zrozumiałość i informacja zwrotna:– Najczęściej odnotowane problemy: [1–2 zdania, konkret].– Najbardziej pomocne elementy feedbacku: [1–2 zdania].
+W grupie początkującej największe trudności zaobserwowano w zadaniu 4, w którym niepowodzenia wystąpiły u 2/3 uczestników, przy czym w jednym przypadku odnotowano ich wysoką liczbę (do 3), co wiązało się z wyraźnym wydłużeniem czasu realizacji tego zadania. Podwyższony poziom trudności ujawnił się również w zadaniu 1 (niepowodzenia u 2/3 osób). W zadaniach 2 i 3 niepowodzenia występowały rzadziej (odpowiednio 1/3 oraz 1/3 badanych), a czasy realizacji charakteryzowały się większą jednorodnością.
 
-Lokomocja i komfort:– Zgłaszane trudności: [1 zdanie].– Elementy ograniczające dyskomfort: [1 zdanie].
+Największe różnice pomiędzy grupami ujawniły się w zadaniu 4: średni czas wykonania w grupie początkującej wyniósł 150,39~s, podczas gdy w grupie zaawansowanej 55,44~s. Ponadto wyniki grupy początkującej cechowały się wyraźnie większą zmiennością czasu ukończenia całego scenariusza (374,12--492,79~s) w porównaniu z grupą zaawansowaną (213,11--214,33~s).
 
-Immersja i poczucie obecności:– Uczestnicy wskazywali, że [krótka obserwacja], szczególnie w [wariant / zadanie].
 
-Po zakończeniu badania uczestnicy mieli możliwość podzielenia się spontaniczną uwagą lub sugestią dotyczącą przetestowanego wariantu interfejsu. Odpowiedzi zapisywano w postaci krótkich notatek. Element ten nie stanowił formalnej części badania, lecz umożliwiał zebranie dodatkowych wskazówek projektowych, które były nieuchwytne dla automatycznych pomiarów ani obserwacji zachowań,
+Obserwacje jakościowe
+
+
+
+
+
+
+
+W scenariuszu A wskazówki potrzebne do rozwiązania zadania zostały celowo umieszczone w osobnym pomieszczeniu, aby sprawdzić, czy użytkownicy będą aktywnie poszukiwać informacji w otoczeniu. Uczestnicy testujący wariant z interfejsem panelowym często nie powiązali etapu wpisywania kombinacji z koniecznością wcześniejszego odnalezienia wskazówki w przestrzeni i rozpoczęli wpisywanie sekwencji metodą prób, co znajduje odzwierciedlenie w liczbie zarejestrowanych niepowodzeń. Uczestnik z największą liczbą prób ostatecznie trafił na poprawne hasło poprzez zgadywanie, natomiast dwie osoby z mniejszą liczbą niepowodzeń po pierwszych próbach zinterpretowały informację zwrotną jako sygnał, że wprowadzone dane są nieprawidłowe i że hasło powinno być gdzieś podane.
+
+Warto zaznaczyć, że w tym wariancie informacja zwrotna była ograniczona i pojawiała się dopiero po wpisaniu całej sekwencji, co sprawiało, że uczestnicy nie otrzymywali sygnału już przy pierwszym popełnionym błędzie. Taki sposób udzielania feedbacku sprzyjał dalszemu podejmowaniu prób, ponieważ użytkownik nie miał natychmiastowej informacji, że wybrana strategia jest nieprawidłowa ani jednoznacznej sugestii, że rozwiązania należy szukać w innym obszarze.
+
+
+
+
+
+
+Podczas badania uczestnicy mieli możliwość dzielenia się spontaniczną uwagą lub sugestią dotyczącą przetestowanego wariantu interfejsu. Odpowiedzi zapisywano w postaci krótkich notatek. Element ten nie stanowił formalnej części badania, lecz umożliwiał zebranie dodatkowych wskazówek projektowych, które były nieuchwytne dla automatycznych pomiarów ani obserwacji zachowań.
 \section{Wnioski projektowe}
+
+
 
 
 \section{Ograniczenia badań}
