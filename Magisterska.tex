@@ -32,7 +32,7 @@
 \usepackage{beramono}
 \usepackage[section]{placeins}
 \usepackage{comment}
-\usepackage{carlito} % Dodanie czcionki Carlito
+\usepackage{carlito} % Dodanie czcionki Carlito mnie
 \usepackage[%
 backend=biber,refsegment=section,
 defernumbers=true,
@@ -78,9 +78,14 @@ Designing and evaluating user interfaces in VR games: an overview of solutions a
 \frenchspacing
 \begin{document}
 \begin{abstract}
-Celem niniejszej pracy była analiza wybranych gier VR w celu zidentyfikowania najczęściej stosowanych rozwiązań interfejsu i interakcji, rozpoznanie obszarów problematycznych dla użytkowników na podstawie badania ankietowego, a następnie zaprojektowanie i implementacja prototypu gry VR reprezentującej wybrany gatunek oraz porównanie dwóch wariantów interfejsu i interakcji pod kątem efektywności wykonywania zadań. Badania koncentrowały się na środowisku gry typu puzzle/exploration. W pierwszym etapie przeprowadzono analizę heurystyczną wybranych gier VR w celu identyfikacji powtarzalnych rozwiązań projektowych oraz typowych problemów użyteczności. Następnie wykonano badanie ankietowe z udziałem użytkowników technologii VR, którego celem było zweryfikowanie subiektywnych odczuć i trudności związanych z interakcją i immersją.
 
-Na podstawie uzyskanych wniosków zaprojektowano i zaimplementowano prototyp środowiska testowego w silniku Unity, który zawierał dwa podejścia projektowe różniące się sposobem prezentacji interfejsu (panelowy vs zintegrowany z przestrzenią wirtualną), mechanizmem lokomocji (ruch ciągły vs teleportacja) oraz intensywnością i kanałami informacji zwrotnej (jednokanałowa vs wielokanałowa). W ramach kontrolowanego badania eksperymentalnego, uczestnicy wykonywali identyczne zadania w obu wariantach środowiska. Analizie poddano czas realizacji zadań, liczbę błędów oraz subiektywną ocenę komfortu, intuicyjności i poziomu immersji. Uzyskane wyniki pozwoliły określić wpływ przyjętych rozwiązań projektowych na efektywność działania oraz doświadczenie użytkownika w środowisku VR.
+Analiza zróżnicowanych podejść projektowych w zakresie interfejsu i interakcji w grach VR oraz ocena ich wpływu na efektywność i doświadczenia użytkownika w oparciu o zaimplementowany prototyp uwzględniający specyfikę wybranego gatunku gry.
+
+Przeprowadzono analizę heurystyczną wybranych gier komercyjnych w celu identyfikacji zróżnicowanych podejść do projektowania interfejsów i interakcji w środowisku wirtualnym. Wykonano badanie ankietowe na grupie 44 osób, które pozwoliło zweryfikować rynkowe rozwiązania i zdefiniować realne potrzeby oraz problemy użytkowników technologii VR.
+
+Zaprojektowano i zaimplementowano autorski prototyp w silniku Unity, w którym przebudowano logikę interakcji i utworzono klasy menedżerów odpowiedzialne za sekwencyjny system zadań oraz pomiar wydajności gracza. Opracowano dwa warianty środowiska, aby przetestować wpływ różnych koncepcji projektowych
+
+Wdrożony system został przetestowany w ramach badania eksperymentalnego, które mimo ograniczonej liczebnie grupy badawczej, pozwoliło na zidentyfikowanie istotnych tendencji w zachowaniach użytkowników i potwierdzenie poprawności założeń projektowych. Opisano również dalsze możliwości rozwoju prototypu oraz potencjał optymalizacji interakcji wielozmysłowej w grach VR.
 
 \end{abstract}
 
@@ -99,11 +104,11 @@ Jednym z kluczowych elementów wpływających na jakość doświadczenia użytko
 
 Pomimo rosnącej liczby produkcji w technologii VR, na rynku można zaobserwować duże zróżnicowanie pod względem stosowanych rozwiązań oraz niedobór empirycznie weryfikowalnych wytycznych projektowych odnoszących się do konkretnych gatunków gier.  
 
-Celem niniejszej pracy jest porównawcza analiza dwóch odmiennych podejść do projektowania interfejsu użytkownika w grze VR z wybranego gatunku typu puzzle/exploration. W ramach pracy zaprojektowano i zaimplementowano dwa warianty interfejsu realizujące te same funkcje, lecz oparte na różnych założeniach projektowych. Następnie przeprowadzono badanie z udziałem użytkowników, w którym uczestnicy wykonywali identyczne zadania w obu wariantach środowiska. Analizie poddano efektywność realizacji zadań, liczbę prób, czas wykonania oraz subiektywną ocenę komfortu i intuicyjności interakcji.
+Celem pracy analiza zróżnicowanych podejść projektowych w zakresie interfejsu i interakcji w grach VR oraz ocena ich wpływu na efektywność i doświadczenia użytkownika w oparciu o zaimplementowany prototyp uwzględniający specyfikę wybranego gatunku gry.. W ramach pracy zaprojektowano i zaimplementowano dwa warianty interfejsu realizujące te same funkcje, lecz oparte na różnych założeniach projektowych. Następnie przeprowadzono eksperyment z udziałem użytkowników, w którym uczestnicy wykonywali identyczne zadania w jednym z dwóch wariantów środowiska. Analizie poddano czas wykonania, liczbę prób/błędów oraz obserwacje zachowań i spontaniczne uwagi uczestników dotyczące komfortu i intuicyjności interakcji.
 
 Praca obejmuje zarówno część teoretyczną, jak i projektowo-badawczą. W pierwszej części omówiono podstawy projektowania interfejsów w VR, uwarunkowania percepcyjno-ergonomiczne użytkownika, interakcje oraz czynniki wpływające na komfort użytkowania. W dalszej części przedstawiono analizę istniejących rozwiązań interfejsowych w wybranych grach VR z wykorzystaniem oceny heurystycznej oraz wyniki badań wstępnych z użytkownikami, które stanowiły podstawę do sformułowania założeń projektowych.
 
-Kolejne rozdziały opisują proces projektowania i implementacji dwóch wariantów interfejsu w środowisku Unity, strukturę prototypu badawczego oraz zastosowaną metodologię badań porównawczych. Ostatnia część pracy zawiera analizę uzyskanych wyników, ich interpretację, omówienie ograniczeń badania oraz wskazanie kierunków dalszych prac.
+Kolejne rozdziały opisują proces projektowania i implementacji dwóch wariantów interfejsu w środowisku Unity oraz strukturę prototypu badawczego. Ostatnia część pracy zawiera zastosowaną metodologię badań porównawczych analizę uzyskanych wyników, ich interpretację, omówienie ograniczeń badania oraz wskazania wniosków projektowych.
 
 
 
@@ -118,16 +123,16 @@ Kolejne rozdziały opisują proces projektowania i implementacji dwóch wariant�
 \input{chapters/chapter6}
 
 \summary
-Celem mojej pracy było 
+Celem mojej pracy było przeprowadzenie analizy zróżnicowanych podejść projektowych w zakresie interfejsu i interakcji w grach VR oraz ocena ich wpływu na efektywność i doświadczenia użytkownika w oparciu o zaimplementowany prototyp uwzględniający specyfikę wybranego gatunku gry.
 
-Uważam, że udało mi się zrealizować ten cel. 
+Uważam, że udało mi się zrealizować ten cel. Przeprowadzona analiza heurystyczna wybranych gier komercyjnych pozwoliła zidentyfikować odmienne rozwiązania projektowe, a badanie ankietowe zweryfikowało je z perspektywy użytkowników i wskazało obszary problemowe. Następnie opracowany prototyp w dwóch wariantach umożliwił empiryczne porównanie wpływu wybranych decyzji projektowych na przebieg wykonywania zadań. Mimo ograniczonej liczebności próby w eksperymencie uzyskane wyniki pozwoliły wskazać istotne tendencje pokazujące, że zróżnicowane podejścia projektowe w zakresie interfejsu i interakcji w VR mogą zmieniać zarówno efektywność wykonywania zadań, jak i sposób, w jaki użytkownicy odbierają komfort, kontrolę i immersję podczas rozgrywki.
 % załączniki (opcjonalnie):
 \appendix
-\chapter{Tytuł załącznika jeden}
-Treść załącznika jeden.
+%\chapter{Tytuł załącznika jeden}
+%Treść załącznika jeden.
 
-\chapter{Tytuł załącznika dwa}
-Treść załącznika dwa.
+%\chapter{Tytuł załącznika dwa}
+%Treść załącznika dwa.
 
 %\bibliographystyle{plain}
 %\bibliography{literatura}
